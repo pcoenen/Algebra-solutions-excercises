@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Toepassingen van Algebra oplossingen oefeningen}
+\author{Pieter-Jan Coenen}
+\date{December 2016}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{ dsfont }
+\usepackage{enumitem}
+
+\begin{document}
+
+\maketitle
+
+\section{Oefenzitting 1}
+\subsection{Vraag 1}
+Op $\mathds{R}$ definiëren we de samenstellingswet $a\tau b = a+b+a^2 b^2$
+\begin{enumerate}[label=(\alph*)]
+\item Deze wet heeft een neutraal element. Welk?
+\item Ze is niet associatief. Ga na !
+\item Ze is commutatief. Waarom ?
+\end{enumerate}
+
+\textbf{Oplossing} cursus deel I blz 79
+\begin{enumerate}[label=(\alph*)]
+\item Voor de optelling is het neutraal element $0$ voor de vermenigvuldiging is het neutraal element $1$.
+\\ We proberen eerst of het toepassen van de samenstellingswet op $0$ en $x \epsilon \mathds{R}$ terug resulteert in $x$.
+    $$0\tau x = 0+x+0^2 x^2 = x$$
+    $$x\tau 0 = x+0+x^2 0^2 = x$$
+$0$ is dus het neutraal element.
+\item Een samenstellingswet $\top$ is associatief als $x\top (y \top z) = (x \top y) \top z)$.\\
+Met een tegenvoorbeeld aantonen dat dit hier niet het geval is volstaat dus.\\
+Bijvoorbeeld:
+    $$1\tau (2 \tau 3) = 1 \tau (2 + 3 + 4*9) = 1 \tau 41 = 1 + 41 + 1^2 41^2 = 1723 $$
+    $$(1\tau 2) \tau 3 = (1 + 2 + 1*4) \tau 3 = 7 \tau 3 = 7 + 3 + 7^2 3^2 = 451$$
+\item Ze is commutatief. Waarom ?
+\end{enumerate}
+
+
+\section{Conclusion}
+``I always thought something was fundamentally wrong with the universe'' \citep{adams1995hitchhiker}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
