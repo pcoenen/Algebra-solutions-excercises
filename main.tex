@@ -8,7 +8,7 @@
 
 \usepackage{natbib}
 \usepackage{graphicx}
-\usepackage{ dsfont }
+%\\usepackage{ dsfont }
 \usepackage{ textcomp }
 \usepackage{enumitem}
 \usepackage{amsmath}
@@ -56,33 +56,35 @@
 
 \section{Oefenzitting 1}
 \subsection{Oefening 1}
-Op $\mathds{R}$ definiëren we de samenstellingswet $a\tau b = a+b+a^2 b^2$
+Op $ \mathbb{R} $ definiëren we de samenstellingswet $a\tau b = a+b+a^2 b^2$
 \begin{enumerate}[label=(\alph*)]
 \item Deze wet heeft een neutraal element. Welk?
-\item Ze is niet associatief. Ga na !
-\item Ze is commutatief. Waarom ?
+\item Ze is niet associatief. Ga na!
+\item Ze is commutatief. Waarom?
 \end{enumerate}
 
 \textbf{Oplossing} cursus deel I blz 79
 \begin{enumerate}[label=(\alph*)]
 \item Voor de optelling is het neutraal element $0$ voor de vermenigvuldiging is het neutraal element $1$.
-\\ We proberen eerst of het toepassen van de samenstellingswet op $0$ en $x \in \mathds{R}$ terug resulteert in $x$.
+\\ We proberen eerst of het toepassen van de samenstellingswet op $0$ en $x \in \mathbb{R}$ terug resulteert in $x$.
     $$0\tau x = 0+x+0^2 x^2 = x$$
     $$x\tau 0 = x+0+x^2 0^2 = x$$
-$0$ is dus het neutraal element.
+$0$ is dus het neutraal element.\\
+Als alternatief kun ge de algemene uitdrukking $ e \tau x$ uitwerken en op zoek gaan naar een waarde van e zodat dit gelijk is aan x. 
+
 \item Een samenstellingswet $\top$ is associatief $\Leftrightarrow \forall x,y \in A: x\top (y \top z) = (x \top y) \top z)$. (I blz 80)\\
 We kunnen dus met een tegenvoorbeeld aantonen dat deze samenstellingswet niet associatief is.\\
 Bijvoorbeeld:
     $$1\tau (2 \tau 3) = 1 \tau (2 + 3 + 4*9) = 1 \tau 41 = 1 + 41 + 1^2 41^2 = 1723 $$
     $$(1\tau 2) \tau 3 = (1 + 2 + 1*4) \tau 3 = 7 \tau 3 = 7 + 3 + 7^2 3^2 = 451$$
 \item $\top$ is commutatief als $\Leftrightarrow \forall x,y \in A: x \top y  = y \top x $ (I blz. 80) \\
-Deze samenstellingswet maakt enkel gebruik van de operatoren "+" en "*". Aangezien dat deze beide commutatief zijn zal ook de samenstellingswet commutatief zijn. \\
+Deze samenstellingswet maakt enkel gebruik van de operatoren ''+'' en ''*''. Aangezien dat deze beide commutatief zijn zal ook de samenstellingswet commutatief zijn. \\
 	$$\forall x,y \in A: x\tau y = x+y+x^2 y^2 = y+x+y^2 x^2 = y\tau x$$
 \end{enumerate}
 
 
 \subsection{Oefening 2}
-Bewijs dat in $\mathds{R}^2\times\mathds{R}^2$ volgende relaties equivalentierelaties zijn:
+Bewijs dat in $\mathbb{R}^2\times\mathbb{R}^2$ volgende relaties equivalentierelaties zijn:
 	$$ G = \{((a, b),(c, d))|a^2 + b^2 = c^2 + d^2\}$$
 	$$ H = \{((a, b),(c, d))|b-a = d-c\}$$
 	$$ J = \{((a, b),(c, d))|a+b = c+d\}$$
@@ -92,10 +94,10 @@ Een relatie $R \subseteq A\times A$ is een equivalentierelatie (I blz.58) $\Left
 \begin{enumerate}
 \item $R$ is reflexief $\Leftrightarrow$ elk element staat in relatie met zichzelf (I blz 59) :
 	$$\forall x\in A : (x,x) \in R \text{ of } \forall x\in A : xRx$$
-	Voorbeeld hiervalnis bijvoorbeeld de "equals-relatie" elk element is gelijk aan zichzelf $x=x$.
+	Voorbeeld hiervan is de ''equals-relatie'' elk element is gelijk aan zichzelf $x=x$.
 \item $R$ is symmetrisch $\Leftrightarrow$ de relatie in twee richtingen geldt (I blz 59) :
 	$$(x,y) \in R \Rightarrow (y,x)\in R \text{ of } xRy\Rightarrow  yRx$$
-	De "equals-relatie" is bijvoorbeeld symmetrisch want als $x=y \Rightarrow y=x$.
+	De ''equals-relatie'' is bijvoorbeeld symmetrisch want als $x=y \Rightarrow y=x$.
 	De kleiner dan relatie is bijvoorbeeld niet symmetrisch wat als $x<y \nRightarrow y<x$.
 \item $R$ is transitief $\Leftrightarrow$ de relatie kan doorgegeven worden (erfelijk is). (I blz 60) :
 	$$(x,y) \in R\text{ en } (y,z) \in R \Rightarrow (x,z)\in R \text{ of } xRy\text{ en } yRz\Rightarrow  xRz$$
@@ -104,15 +106,15 @@ Een relatie $R \subseteq A\times A$ is een equivalentierelatie (I blz.58) $\Left
 \textbf{Oplossing voor G}
 \begin{enumerate}
 \item $G$ is reflexief want
-	$$ \forall (x,y) \in\mathds{R}^2  \Rightarrow x^2 + y^2 = x^2 + y^2$$
+	$$ \forall (x,y) \in\mathbb{R}^2  \Rightarrow x^2 + y^2 = x^2 + y^2$$
 	dus geldt dat 
-	$$ \forall (x,y) \in\mathds{R}^2 : (x,y)G(x,y)$$
+	$$ \forall (x,y) \in\mathbb{R}^2 : (x,y)G(x,y)$$
 \item $G$ is symmetrisch want
-	$$ \forall (x,y), (z,q) \in\mathds{R}^2: x^2 + y^2 = z^2 + q^2 \Rightarrow  z^2 + q^2 = x^2 + y^2 $$
+	$$ \forall (x,y), (z,q) \in\mathbb{R}^2: x^2 + y^2 = z^2 + q^2 \Rightarrow  z^2 + q^2 = x^2 + y^2 $$
 	dus geldt dat 
 	$$ (x,y)G(z,q) \Rightarrow (z,q)G(x,y) $$
 \item $G$ is transitief want
-	$$ \forall (x,y), (z,q),(v,w) \in\mathds{R}^2: (x^2 + y^2 = z^2 + q^2 \text{ \& } z^2 + q^2 = v^2 + w^2)  \Rightarrow  x^2 + y^2 = v^2 + w^2 $$
+	$$ \forall (x,y), (z,q),(v,w) \in\mathbb{R}^2: (x^2 + y^2 = z^2 + q^2 \text{ \& } z^2 + q^2 = v^2 + w^2)  \Rightarrow  x^2 + y^2 = v^2 + w^2 $$
 	dus geldt dat
 	$$ (x,y)G(z,q) \text{ \& } (z,q)G(v,w)  \Rightarrow (x,y)G(v,w) $$
 \end{enumerate}
@@ -121,15 +123,15 @@ Aangezien dat aan alle voorwaarden is voldaan, is $G$ een equivalentierelatie.\\
 \textbf{Oplossing voor H}
 \begin{enumerate}
 \item $H$ is reflexief want
-	$$ \forall (x,y) \in\mathds{R}^2  \Rightarrow y-x = y-x$$
+	$$ \forall (x,y) \in\mathbb{R}^2  \Rightarrow y-x = y-x$$
 	dus geldt dat 
-	$$ \forall (x,y) \in\mathds{R}^2 : (x,y)H(x,y)$$
+	$$ \forall (x,y) \in\mathbb{R}^2 : (x,y)H(x,y)$$
 \item $H$ is symmetrisch want
-	$$ \forall (x,y), (z,q) \in\mathds{R}^2: y-x=q-z \Rightarrow  q-z=y-x $$
+	$$ \forall (x,y), (z,q) \in\mathbb{R}^2: y-x=q-z \Rightarrow  q-z=y-x $$
 	dus geldt dat 
 	$$ (x,y)H(z,q) \Rightarrow (z,q)H(x,y) $$
 \item $H$ is transitief want
-	$$ \forall (x,y), (z,q),(v,w) \in\mathds{R}^2: (y-x=q-z \text{ \& } q-z=w-v)  \Rightarrow  y-x=w-v $$
+	$$ \forall (x,y), (z,q),(v,w) \in\mathbb{R}^2: (y-x=q-z \text{ \& } q-z=w-v)  \Rightarrow  y-x=w-v $$
 	dus geldt dat
 	$$ (x,y)H(z,q) \text{ \& } (z,q)H(v,w)  \Rightarrow (x,y)H(v,w) $$
 \end{enumerate}
@@ -137,21 +139,21 @@ Aangezien dat aan alle voorwaarden is voldaan, is $H$ een equivalentierelatie.\\
 \textbf{Oplossing voor J}
 \begin{enumerate}
 \item $J$ is reflexief want
-	$$ \forall (x,y) \in\mathds{R}^2  \Rightarrow x+y=x+y$$
+	$$ \forall (x,y) \in\mathbb{R}^2  \Rightarrow x+y=x+y$$
 	dus geldt dat 
-	$$ \forall (x,y) \in\mathds{R}^2 : (x,y)J(x,y)$$
+	$$ \forall (x,y) \in\mathbb{R}^2 : (x,y)J(x,y)$$
 \item $J$ is symmetrisch want
-	$$ \forall (x,y), (z,q) \in\mathds{R}^2: x+y=z+q \Rightarrow  q+z=x+y $$
+	$$ \forall (x,y), (z,q) \in\mathbb{R}^2: x+y=z+q \Rightarrow  q+z=x+y $$
 	dus geldt dat 
 	$$ (x,y)J(z,q) \Rightarrow (z,q)J(x,y) $$
 \item $J$ is transitief want
-	$$ \forall (x,y), (z,q),(v,w) \in\mathds{R}^2: (x+y=z+q\text{ \& } z+q=v+w)  \Rightarrow  x+y=v+w $$
+	$$ \forall (x,y), (z,q),(v,w) \in\mathbb{R}^2: (x+y=z+q\text{ \& } z+q=v+w)  \Rightarrow  x+y=v+w $$
 	dus geldt dat
 	$$ (x,y)J(z,q) \text{ \& } (z,q)J(v,w)  \Rightarrow (x,y)J(v,w) $$
 \end{enumerate}
 Aangezien dat aan alle voorwaarden is voldaan, is $J$ een equivalentierelatie.\\ \\
 \textbf{Oplossing bijvraag} \\ 
-$H \cap J$ zijn dus alle koppels uit $\mathds{R}^2 $ die behoren tot zowel H als J.\\
+$H \cap J$ zijn dus alle koppels uit $\mathbb{R}^2 $ die behoren tot zowel H als J.\\
 Dit geeft de volgende formele beschrijving:
 $$ H \cap J = \{((a, b),(c, d))|b-a = d-c \text{ \& } a+b = c+d\}$$
 We kunnen dit verder uitwerken door dit in een stelsel te gieten:
@@ -179,6 +181,8 @@ $$
 $$
 Nu kunnen we $ H \cap J $ schrijven als:
 	$$ H \cap J = \{((a, b),(c, d))| a = c \text{ \& } b = d\}$$
+	$$= \{ (x,y) | x \in \mathbb{R}^2 , y \in \mathbb{R}^2 ,x =y \}$$ 
+	$$= \{ (x,x) | x \in \mathbb{R}^2 \}$$
 \subsection{Oefening 3}
 Los het volgende stelsel op in (mod 7):
 $$
@@ -210,7 +214,7 @@ We zetten dit stelsel eerst om naar een matrix
 2 & 1 & 2 & -1 \\
 \end{array}
 \right]
-\arrows{R_1 = R_1 \text{ mod } 5}{}{}
+\arrows{R_1 = R_1 \text{ mod } 7}{}{}
 \left[
 \begin{array}{ccc|c}
 1 & 4 & 2 & 6 \\
@@ -238,7 +242,7 @@ We zetten dit stelsel eerst om naar een matrix
 \right]
 \]
 \[
-\arrows{}{R_2 = R_2 * 6}{R_3 = R_3 * 3}
+\arrows{}{R_2 = R_2 * 6 ~ (mod ~7)}{R_3 = R_3 * 3 ~(mod ~7)}
 \left[
 \begin{array}{ccc|c}
 1 & 4 & 2 & 6 \\
@@ -254,13 +258,13 @@ $$
 	x_2 = 3 \\
 	x_3 = 3
 \end{cases}
-=
+\rightarrow
 \begin{cases}
 	x_1 + 18 \text{ (mod }7) = x_1 + 4 = 6\\
 	x_2 = 3 \\
 	x_3 = 3
 \end{cases}
-=
+\rightarrow
 \begin{cases}
 	x_1 = 2\\
 	x_2 = 3 \\
@@ -292,7 +296,7 @@ Bij een gelijkzijdige driehoek hebben we dus $3*2 = 6$ isometrieën.
 Dit geeft ons de volgende bewerkingstabel:
 $$
 \begin{tabular}{l|llllll}
-◦     & $e$   & $r_1$ & $r_2$ & $m_1$ & $m_2$ & $m_3$ \\ \hline
+$\circ$ & $e$   & $r_1$ & $r_2$ & $m_1$ & $m_2$ & $m_3$ \\ \hline
 $e$   & $e$   & $r_1$ & $r_2$ & $m_1$ & $m_2$ & $m_3$ \\
 $r_1$ & $r_1$ & $r_2$ & $e$   & $m_3$ & $m_1$ & $m_2$ \\
 $r_2$ & $r_2$ & $e$   & $r_1$ & $m_2$ & $m_3$ & $m_1$ \\
@@ -302,7 +306,50 @@ $m_3$ & $m_3$ & $m_1$ & $m_2$ & $r_1$ & $r_2$ & $e$
 \end{tabular}
 $$
 
-Deze tabel is duidelijk niet symetrisch, dit betekend dat niet alle samenstellingen commutatief zijn.
+Deze tabel is duidelijk niet symmetrisch, dit betekent dat $\circ$ hier niet commutatief is. %ik kan niet zeggen dat samenstellingen commutatief zijn 
+
+\subsection{Oefening 5} 
+Een latijns vierkant is een $n \times n$ tabel waarin slechts n verschillende elementen voorkomen. In elke rij en elke kolom komt namelijk elk element juist eenmaal voor. 
+\begin{enumerate}
+	\item Bewijs dat de bewerkingstabel voor een eindige groep steeds een Latijns vierkant is. 
+	\item Is dit ook een voldoende voorwaarde om een groep te hebben? Bepaal of volgend Latijns vierkant de bewerkingstabel van een groep is: \\
+	\begin{tabular}{l | l l l l l l }
+		$\tau$ & a & b & c & d & e & f \\ \hline
+		a & c & e & a & b & f & d \\
+		b & f & c & b & a & d & e \\
+		c & a & b & c & d & e & f \\
+		d & e & a & d & f & c & b \\
+		e & d & f & e & c & b & a \\
+		f & b & d & f & e &a &c 
+	\end{tabular}
+\end{enumerate}
+\textbf{oplossing voor eerste deel} \\ \\
+Een eindige groep $\langle A, * \rangle$ heeft als eigenschappen (I p93): 
+\begin{itemize}
+	\item $*$ is overal bepaald
+	$\rightarrow$ heel onze bewerkingstabel in ingevuld   
+	\item $*$ is associatief 
+	\item neutraal element
+	\item symmetriseerbaar 
+\end{itemize}
+//TODO 
+
+\textbf{oplossing voor tweede deel} \\
+\begin{itemize}
+	\item We kijken eerst na of er een neutraal element bestaat. 
+	Dus we zijn op zoek naar een element x zodat $\forall y: x \tau y=y$ (en ook $y \tau x = y$)
+	In een bewerkingstabel zien we dit doordat de rij en kolom bij c alle elementen afbeelden op zichzelf.
+	\item Dan kijken we na of elke element een inverse heeft. Voor elk element x moet er een element y bestaan zodat $x \tau y = c$. En dat is hier het geval! (controleer maar). 
+	\item $\tau$ is overal bepaald want de gehele bewerkingstabel is ingevuld. 
+	\item associativiteit is niet zo heel eenvoudig om na te kijken. Daarom proberen we dit systematisch rij per rij te doen. \\
+	We gaan altijd $ x \tau (y \tau [a, b, c,d,e,f])$ berekenen en kijken of dit gelijk is aan $(x \tau y) \tau  [a, b, c,d,e,f]$.\\
+	Op die manier vinden we een tegenvoorbeeld:\\
+	$a \tau (b \tau b) = a $ en $(a \tau b) \tau b =f$ 
+	$\rightarrow$ niet associatief.
+	
+\end{itemize}
 
 
+		
+	
 \end{document}
