@@ -310,20 +310,25 @@ Bij een gelijkzijdige driehoek hebben we dus $3*2 = 6$ isometrieën.
 	$$\Eqtriangle{1}{2}{3}{3}{2}{1}$$
 \end{enumerate}
 
-Dit geeft ons de volgende bewerkingstabel:
+\noindent Dit geeft ons de volgende bewerkingstabel:
 $$
 \begin{tabular}{l|llllll}
 $\circ$ & $e$   & $r_1$ & $r_2$ & $m_1$ & $m_2$ & $m_3$ \\ \hline
 $e$   & $e$   & $r_1$ & $r_2$ & $m_1$ & $m_2$ & $m_3$ \\
 $r_1$ & $r_1$ & $r_2$ & $e$   & $m_3$ & $m_1$ & $m_2$ \\
 $r_2$ & $r_2$ & $e$   & $r_1$ & $m_2$ & $m_3$ & $m_1$ \\
-$m_1$ & $m_1$ & $m_2$ & $m_3$ & $e$   & $r_1$ & $r_2$ \\
+$m_1$ & $m_1$ & $m_2$ & \textcolor{blue}{$m_3$} & $e$   & $r_1$ & $r_2$ \\
 $m_2$ & $m_2$ & $m_3$ & $m_1$ & $r_2$ & $e$   & $r_1$ \\
 $m_3$ & $m_3$ & $m_1$ & $m_2$ & $r_1$ & $r_2$ & $e$  
 \end{tabular}
 $$
 
-\noindent \\ Deze tabel is duidelijk niet symetrisch, dit betekend dat niet alle samenstellingen commutatief zijn, dit betekent dat $\circ$ niet commutatief is.
+\noindent \\ \textcolor{blue}{$m_3$} wordt bijvoorbeeld bekomen door eerst $r_2$ toe te passen
+	$$\Eqtriangle{1}{2}{3}{3}{1}{2}$$
+op dit resultaat passen we nu $m_1$ toe
+	$$\Eqtriangle{3}{1}{2}{3}{2}{1}$$
+Het toepassen van ''$m_1\circ r_2$'' is dus hetzelfde als het toepassen van \textcolor{blue}{$m_3$}. \\
+\\ De verkregen tabel is duidelijk niet symetrisch, dit betekend dat niet alle samenstellingen commutatief zijn en dus dat $\circ$ niet commutatief is.
 
 \subsection{Oefening 5}
 Een latijns vierkant is een n×n tabel waarin slechts n verschillende elementen voorkomen.
