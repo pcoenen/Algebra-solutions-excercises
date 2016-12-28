@@ -392,5 +392,66 @@ Definitie 2.1 (deel I blz. 93) : Een groep is een monoïde waarvoor elk element 
 \newpage
 \section{Oefenzitting 2}
 \subsection{Oefening 1}
+Bewijs dat $\mathbb{R}_0 \times \mathbb{R}$ voorzien van de samenstellingswet $((a,b),(c,d)) \mapsto (ac,bc+d)$ een groep is. Is hij abels ? \\ \\
+\textbf{Oplossingsmethode} \\ \\
+Definitie 2.1 (deel I blz. 93) : Een groep is een monoïde waarvoor elk element symmetriseerbaar is. Dus $\langle A, * \rangle$ is een groep asa :
+	\begin{itemize}
+		\item $*$ is overal bepaald
+		\item $x*(y*z) = (x*y)*z$ \quad (associatief)
+		\item $\exists e \in A : \forall x \in A : x*e = e*x = x$ \quad (neutraal element)
+		\item $\forall x : \exists x^{-1} \in A : x*x^{-1} = x^{-1}*x =e$ \quad (symmetriseerbaar)
+	\end{itemize}
+Als $*$ commutatief is, dan is de groep abels. \\ \\
+\textbf{Oplossing} \\ 
+\begin{itemize}
+	\item $*$ is overal bepaald in $\mathbb{R}_0$, dus $ac \in \mathbb{R}_0$\\
+		 $*$ en $+$ zijn ook overal bepaald in $\mathbb{R}$, dus $bc + d \in \mathbb{R}$. \\
+		\\ De bewerking is dus overal bepaald.
+	\item Associatief want
+		$$((x,y),((i,j),(u,v))) = ((x,y),(iu,ju+v)) = (xiu,yiu+ju+v)$$
+		en
+		$$(((x,y),(i,j)),(u,v)) = ((xi,yi+j),(u,v)) = (xiu, yiu + ju + v)$$
+	\item Voor het neutraal element $(e_1,e_2)$ moet gelden dat :
+			$$\begin{cases}
+				((x,y),(e_1,e_2)) = (x,y) \\
+				((e_1,e_2),(x,y)) = (x,y)
+			\end{cases}$$
+		Dus moet gelden dat
+			$$\begin{cases}
+				((x,y),(e_1,e_2)) = (x e_1,y e_1 + e_2) =  (x,y) \\
+				((e_1,e_2),(x,y)) = (e_1 x,e_2 x+y) = (x,y)
+			\end{cases}$$
+			$$= \begin{cases}
+					x e_1 = x \\
+					e_1 x = x \\
+					y e_1 + e_2 = y \\
+					e_2 x+y = y 
+			\end{cases}$$
+		Dus dan zal
+			$$\begin{cases}
+					e_1 = 1 \\
+					e_2 = 0
+			\end{cases}$$
+		$(1,0)$ is dus het neutraal element.
+	\item Symmetriseerbaarheid:
+		$$((x,y),(x^{-1},y^{-1})) = (1,0) \\
+			\Leftrightarrow 
+				\begin{cases}
+					xx^{-1} = 1\\
+					yx^{-1} + y^{-1} = 0
+				\end{cases}$$
+		$$\Leftrightarrow
+			\begin{cases}
+				x^{-1} = \frac{1}{x} \\
+				y^{-1} = -\frac{y}{x}
+			\end{cases}
+		$$
+		Het symmetrisch element voor $(x,y)$ is dus $(\frac{1}{x},-\frac{y}{x})$
+\end{itemize}
+Aangezien dat aan alle eigenschappen van een groep zijn voldaan, is dit dus duidelijk een groep. \\ \\
+Een groep is abels als de bewerking commutatief is, we testen dit even uit:
+	$$((x,y),(v,w)) = (xv,yv+w)$$
+	$$((v,w),(x,y)) = (vx,wx+y)$$
+Het is duidelijk dat de bovenstaande bewerkingen niet aan elkaar gelijk zijn en de groep dus niet commutatief (of abels) is.
 \subsection{Oefening 2}
 \end{document}
