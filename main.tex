@@ -16,6 +16,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{gensymb}
+\usepackage{hyperref}
 
 \newcommand\arrows[3]{
 	\quad
@@ -62,15 +63,29 @@ Op $ \mathbb{R} $ definiëren we de samenstellingswet $a\tau b = a+b+a^2 b^2$
 \item Ze is niet associatief. Ga na!
 \item Ze is commutatief. Waarom?
 \end{enumerate}
-
-\textbf{Oplossing} cursus deel I blz 79
+\textbf{Oplossingsmethode} \\ \\
+Ga al deze eigenschappen na voor de gegeven samenstellingswet. De eigenschappen kunnen worden gevonden in de cursus deel I blz 79. \\ \\
+\textbf{Oplossing} \\
 \begin{enumerate}[label=(\alph*)]
-\item Voor de optelling is het neutraal element $0$ voor de vermenigvuldiging is het neutraal element $1$.
+\item Een snelle intuïtieve methode om dit op te lossen is door te testen of het neutraal element voor de optelling $(0)$ of het neutraal element voor de vermenigvuldiging $(1)$ een neutraal element is voor deze samenstellingswet.
 \\ We proberen eerst of het toepassen van de samenstellingswet op $0$ en $x \in \mathbb{R}$ terug resulteert in $x$.
     $$0\tau x = 0+x+0^2 x^2 = x$$
     $$x\tau 0 = x+0+x^2 0^2 = x$$
 $0$ is dus het neutraal element.\\ \\
-Je kan ook de algemene uitdrukking $ e \tau x$ uitwerken en op zoek gaan naar een waarde van e die gelijk is aan x.
+Tweede manier om dit op te lossen is door de uitdrukking $ e \tau x$ uit te werken en op zoek gaan naar een waarde van $e$ zodat het $e\tau x = x$
+\begin{align*} 
+&e\tau x = x \\
+\Leftrightarrow  &\, e + x + e^2 x^2 = x\\
+\Leftrightarrow  &\, e + e^2 x^2 = 0\\
+\Leftrightarrow  &\, e (1 + e x^2) = 0\\
+\Leftrightarrow  &\, 
+\begin{cases}
+	e = 0 \\
+	e = \frac{-1}{x^2}
+\end{cases}
+\end{align*}
+Ook met deze mehode is dus duidelijk dat $0$ het neutraal element is.
+
 
 \item Een samenstellingswet $\top$ is associatief $\Leftrightarrow \forall x,y \in A: x\top (y \top z) = (x \top y) \top z)$. (I blz 80)\\
 We kunnen dus met een tegenvoorbeeld aantonen dat deze samenstellingswet niet associatief is.\\
@@ -79,7 +94,7 @@ Bijvoorbeeld:
     $$(1\tau 2) \tau 3 = (1 + 2 + 1*4) \tau 3 = 7 \tau 3 = 7 + 3 + 7^2 3^2 = 451$$
 \item $\top$ is commutatief als $\Leftrightarrow \forall x,y \in A: x \top y  = y \top x $ (I blz. 80) \\
 Deze samenstellingswet maakt enkel gebruik van de operatoren ''+'' en ''*''. Aangezien dat deze beide commutatief zijn zal ook de samenstellingswet commutatief zijn. \\
-	$$\forall x,y \in A: x\tau y = x+y+x^2 y^2 = y+x+y^2 x^2 = y\tau x$$
+	$$\forall x,y \in \mathbb{R}: x\tau y = x+y+x^2 y^2 = y+x+y^2 x^2 = y\tau x$$
 \end{enumerate}
 
 
@@ -89,7 +104,7 @@ Bewijs dat in $\mathbb{R}^2\times\mathbb{R}^2$ volgende relaties equivalentierel
 	$$ H = \{((a, b),(c, d))|b-a = d-c\}$$
 	$$ J = \{((a, b),(c, d))|a+b = c+d\}$$
 Welke zijn de partities die hierdoor gedefinieerd worden? Welke partitie definieert $H \cap J$? \\ \\
-\textbf{Oplossingsmethode} \\
+\textbf{Oplossingsmethode} \\ \\
 Een relatie $R \subseteq A\times A$ is een equivalentierelatie (I blz.58) $\Leftrightarrow$
 \begin{enumerate}
 \item $R$ is reflexief $\Leftrightarrow$ elk element staat in relatie met zichzelf (I blz 59) :
@@ -191,11 +206,12 @@ $$
 	4x_1 - x_2 + x_3 = 0 \\
 	2x_1 - x_2 + 2x_3 = -1
 \end{cases}$$
-\textbf{Oplossingsmethode}\\
+\textbf{Oplossingsmethode}\\ \\
 Zie volledig uitgewerkt voorbeeld in deel I blz. 85. \\
 Je kan beter geen deling gebruiken, want in sommige omstandigheden zorgt dit voor fouten. In plaats van een getal $x$ dus te delen door $x$ om een $1$ te bekomen moet je opzoek gaan naar een getal $y$ zodat $x*y=1$.\\
 Bijvoorbeeld in modulo 5, om van $2$ naar $1$ te gaan doe je $2*3 = 6 \text{ mod } 5 = 1$.\\ \\
-\textbf{Oplossing}\\
+Let op als je een gelijkaardige opgave krijgt met $(\text{mod } k)$ waarbij $k$ geen priemgetal is, meer info zie blz 86 voorbeeld 14.5. \\ \\
+\textbf{Oplossing}\\ \\
 We zetten dit stelsel eerst om naar een matrix
 
 \[
@@ -214,6 +230,8 @@ We zetten dit stelsel eerst om naar een matrix
 2 & 1 & 2 & -1 \\
 \end{array}
 \right]
+\]
+\[
 \arrows{R_1 = R_1 \text{ mod } 7}{}{}
 \left[
 \begin{array}{ccc|c}
@@ -222,8 +240,6 @@ We zetten dit stelsel eerst om naar een matrix
 2 & 1 & 2 & -1 \\
 \end{array}
 \right]
-\]
-\[
 \arrows{}{R_2 = R_2 - 4*R_1}{R_3 = R_3 - 2*R_1}
 \left[
 \begin{array}{ccc|c}
@@ -232,6 +248,8 @@ We zetten dit stelsel eerst om naar een matrix
 0 & -7 & -2 & -13 \\
 \end{array}
 \right]
+\]
+\[
 \arrows{}{R_2 = R_2 \text{ mod } 7}{R_3 =R_3 \text{ mod } 7}
 \left[
 \begin{array}{ccc|c}
@@ -240,8 +258,6 @@ We zetten dit stelsel eerst om naar een matrix
 0 & 0 & 5 & 1\\
 \end{array}
 \right]
-\]
-\[
 \arrows{}{R_2 = R_2 * 6 ~ (mod ~7)}{R_3 = R_3 * 3 ~(mod ~7)}
 \left[
 \begin{array}{ccc|c}
@@ -306,7 +322,7 @@ $m_3$ & $m_3$ & $m_1$ & $m_2$ & $r_1$ & $r_2$ & $e$
 \end{tabular}
 $$
 
-\noindent \\ Deze tabel is duidelijk niet symetrisch, dit betekend dat niet alle samenstellingen commutatief zijn, dit betekent dat $\circ$ hier niet commutatief is.
+\noindent \\ Deze tabel is duidelijk niet symetrisch, dit betekend dat niet alle samenstellingen commutatief zijn, dit betekent dat $\circ$ niet commutatief is.
 
 \subsection{Oefening 5}
 Een latijns vierkant is een n×n tabel waarin slechts n verschillende elementen voorkomen.
