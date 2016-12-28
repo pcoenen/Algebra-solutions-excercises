@@ -347,30 +347,31 @@ e      & d & f & e & c & b & a \\
 f      & b & d & f & e & a & c
 \end{tabular}$$
 \end{enumerate}
-\textbf{oplossing voor eerste deel} \\ \\
-Een eindige groep $\langle A, * \rangle$ heeft als eigenschappen (I p93): 
-\begin{itemize}
-	\item $*$ is overal bepaald
-	$\rightarrow$ heel onze bewerkingstabel in ingevuld   
-	\item $*$ is associatief 
-	\item neutraal element
-	\item symmetriseerbaar 
-\end{itemize}
-//TODO 
-
-\textbf{oplossing voor tweede deel} \\
-\begin{itemize}
-	\item We kijken eerst na of er een neutraal element bestaat. 
-	Dus we zijn op zoek naar een element x zodat $\forall y: x \tau y=y$ (en ook $y \tau x = y$)
-	In een bewerkingstabel zien we dit doordat de rij en kolom bij c alle elementen afbeelden op zichzelf.
-	\item Dan kijken we na of elke element een inverse heeft. Voor elk element x moet er een element y bestaan zodat $x \tau y = c$. En dat is hier het geval! (controleer maar). 
-	\item $\tau$ is overal bepaald want de gehele bewerkingstabel is ingevuld. 
-	\item associativiteit is niet zo heel eenvoudig om na te kijken. Daarom proberen we dit systematisch rij per rij te doen. \\
+\textbf{Oplossingsmethode} \\ \\
+Definitie 2.1 (deel I blz. 93) : Een groep is een monoïde waarvoor elk element symmetriseerbaar is. Dus $\langle A, * \rangle$ is een groep asa :
+	\begin{itemize}
+		\item $*$ is overal bepaald
+		\item $x*(y*z) = (x*y)*z$ \quad (associatief)
+		\item $\exists e \in A : \forall x \in A : x*e = e*x = x$ \quad (neutraal element)
+		\item $\forall x : \exists x^{-1} \in A : x*x^{-1} = x^{-1}*x =e$ \quad (symmetriseerbaar)
+	\end{itemize}
+ \noindent \\ \textbf{Oplossing} \\ 
+\begin{enumerate}[label=(\alph*)]
+	\item 
+	\item We kijken of deze tabel voldoet aan alle eigenschappen van een groep:
+		\begin{itemize}
+			\item Deze bewerking is duidelijk overal bepaald, want de tabel is volledig ingevuld.
+			\item Associativiteit is niet zo heel eenvoudig om na te kijken. Daarom proberen we dit systematisch rij per rij te doen. \\
 	We gaan altijd $ x \tau (y \tau [a, b, c,d,e,f])$ berekenen en kijken of dit gelijk is aan $(x \tau y) \tau  [a, b, c,d,e,f]$.\\
-	Op die manier vinden we een tegenvoorbeeld:\\
-	$a \tau (b \tau b) = a $ en $(a \tau b) \tau b =f$ 
-	$\rightarrow$ niet associatief.
-	
-\end{itemize}
+	Op die manier vinden we het volgende tegenvoorbeeld:\\
+	$a \tau (b \tau b) = a $ en $(a \tau b) \tau b =f$  \\
+			\item Om het neutraal element te zoeken in deze tabel zijn we dus opzoek naar een rij en kolom waar elk element opzichzelf wordt afgebeeld. \\
+				Het is duidelijk dat voor ''c'' elk element op zichzelf wordt afgebeeld. ''c'' is dus het neutraal element.
+			\item Deze bewerking is duidelijk symmetriseerbaar want voor elk element kunnen we een symmetrisch element vinden. \\
+				''a'', ''b'',''c'' en ''f'' zijn zelf het symmetrisch element voor zichzelf. Want bijvoorbeeld $ b \tau b = b \tau b = c$, dit klopt want ''c'' is het neutraal element. \\ Het symmetrisch element voor ''d'' is ''e'' en het symmetrisch element voor ''e'' is dus ''d'' want $d \tau e = e \tau d =  c$.
+		\end{itemize}
+		Het Latijns vierkant kan dus geen bewerkingstabel zijn van een groep, want het is niet associatief.
+\end{enumerate}
+
 
 \end{document}
