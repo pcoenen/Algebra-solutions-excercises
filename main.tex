@@ -17,6 +17,7 @@
 \usetikzlibrary{calc}
 \usepackage{gensymb}
 \usepackage{hyperref}
+\usepackage{amsthm}
 
 \newcommand\arrows[3]{
 	\quad
@@ -358,6 +359,22 @@ Definitie 2.1 (deel I blz. 93) : Een groep is een monoïde waarvoor elk element 
  \noindent \\ \textbf{Oplossing} \\ 
 \begin{enumerate}[label=(\alph*)]
 	\item 
+			Een groep is overal bepaald, dus de tabel is volledig ingevuld. \\ \\
+			Nu bewijzen we dat elk element maar één keer voorkomt op elke rij. Dit doen we door te veronderstellen dat een element twee keer voorkomt op één rij en zo een contradictie te bekomen.
+				\begin{proof}
+					Een element komt twee keer voor op één rij als er een rij bestaat met rij element $a$ en er twee verschillende kolommen bestaan met elementen $x$ en $y$ waarbij $x$ en $y$ verschillend zijn zodat $a\tau x = a\tau y $\\ \\
+					Nu vinden we :
+						\begin{align*} 
+							& a\tau x = a\tau y  \\
+							\Leftrightarrow  &\, a^{-1} \tau (a\tau x) = a^{-1} \tau (a\tau y)\\
+							\Leftrightarrow  &\, (a^{-1} \tau a)\tau x = (a^{-1} \tau a)\tau y \\
+							\Leftrightarrow  &\, e\tau x = e\tau y \\
+							\Leftrightarrow  &\, x  = y
+						\end{align*}
+					Aangezien dat $x$ verschillend is van $y$ kan dit dus niet en hebben we een contradictie.
+				\end{proof}
+				Merk op dat we in het bovenstaande bewijs gebruik maken van het feit dat een groep associatief en symmetrisch is en neutraal element heeft. \\
+				Om te bewijzen dat er geen element twee keer voorkomt in een kolom is het bewijs analoog.
 	\item We kijken of deze tabel voldoet aan alle eigenschappen van een groep:
 		\begin{itemize}
 			\item Deze bewerking is duidelijk overal bepaald, want de tabel is volledig ingevuld.
@@ -372,6 +389,8 @@ Definitie 2.1 (deel I blz. 93) : Een groep is een monoïde waarvoor elk element 
 		\end{itemize}
 		Het Latijns vierkant kan dus geen bewerkingstabel zijn van een groep, want het is niet associatief.
 \end{enumerate}
-
-
+\newpage
+\section{Oefenzitting 2}
+\subsection{Oefening 1}
+\subsection{Oefening 2}
 \end{document}
