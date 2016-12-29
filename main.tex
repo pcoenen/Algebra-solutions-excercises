@@ -503,8 +503,17 @@ Ook de twee triviale deelgroepen zijn uiteraard nevenklassen.\\
 $M_1, M_2, M_3$ zijn geen nevenklassen.\\
 $M_1$ is bijvoorbeeld geen nevenklassen want:
 $$M_1r_1 = \{r_1,m_2\} \neq \{r_1,m_3\} = r_1M_1$$
-
-
-
+\subsection{Oefening 3}
+Zoek de generatoren van de additieve cyclische groepen $\mathbb{Z}_{10}, \mathbb{Z}_{11}, \mathbb{Z}_{12}$
+\\ \\ \textbf{Oplossingsmethode} \\ \\
+Voor een additieve groep, zoek je een element $g$ zodat 
+	$$\forall n \in \mathbb{N}_0 : \quad 0*g = e, \quad 1*g = g, \quad 2*g = g+g, \quad \dots , \quad  n*g = g+g+\dots + g$$
+Waarbij $g$ dus alle elementen van die groep kan genereren (en ook geen andere) dus $\forall n \in \mathbb{N}_0$ is $n*g$ een element van die groep. \\ \\
+Voor een additieve groep $\mathbb{Z}_{x}$ zijn alle getallen $y$ die geen delers gemeenschappelijk hebben met $x$ generatoren voor $\mathbb{Z}_{x}$. \\ \\
+Zie definitie 2.5 deel I blz 97, definitie 1.3 en voorbeeld 1.5 blz 93.
+\\ \\ \textbf{Oplossing} \\ \\
+$\mathbb{Z}_{10}$ bevat de elementen $\{0,\dots ,9\}$ en de generatoren zijn dus $\{1,3,7,9\}$\\ \\
+$\mathbb{Z}_{11}$ bevat de elementen $\{0,\dots ,10\}$ en de generatoren zijn dus $\{1,2,3,4,5,6,7,8,9,10\}$ \\ \\
+$\mathbb{Z}_{12}$ bevat de elementen $\{0,\dots ,11\}$ en de generatoren zijn dus $\{1,5,7,11\}$
 
 \end{document}
