@@ -458,7 +458,12 @@ Het is duidelijk dat de bovenstaande bewerkingen niet aan elkaar gelijk zijn en 
 \\ \\ \textbf{Oplossingsmethode} \\ \\
 Voorbeelden voor het opstellen van een bewerkingstabel kan je vinden in deel I blz. 94-95. \\ \\
 In oefenzitting 1 is oefening 4 gelijkaardig. \\ \\
-De elementen van een deelgroep zijn een deelverzameling van de elementen van een groep en de deelgroep voldoet aan alle eigenschappen van een groep. Zie definitie 2.1 deel I blz 93 en stelling 2.1 deel I blz 94. 
+De elementen van een deelgroep zijn een deelverzameling van de elementen van een groep en de deelgroep voldoet aan alle eigenschappen van een groep. Zie definitie 2.1 deel I blz 93 en stelling 2.1 deel I blz 94. \\ \\
+Een groep $S$, die een deelgroep is van $G$ is een normaaldeler van $G \Leftrightarrow$
+	$$\forall g \in G : g^{-1} Sg = g$$
+of
+	$$\forall x \in G : Sx = xS \quad  \text{ met } xS = \{x\tau s|s\in S\}$$
+Zie definitie 4.2 en stelling 4.2 deel I blz 105. Voorbeeld zie voorbeeld 4.1 blz 107.
 \\ \\ \textbf{Oplossing} \\ \\
 Voor een rij van 3 elementen zijn er $3! = 6$ permutaties mogelijk. We zoeken eerst deze permutaties.
 \begin{enumerate}
@@ -481,6 +486,25 @@ $m_2$ & $m_2$ & $m_3$ & $m_1$ & $r_2$ & $e$   & $r_1$ \\
 $m_3$ & $m_3$ & $m_1$ & $m_2$ & $r_1$ & $r_2$ & $e$  
 \end{tabular}
 $$
-Aangezien dat een deelgroep zelf ook een groep is, moet deze dus altijd het neutraal element van de groep bevatten. Daarnaast moet de deelgroep ook overal bepaald zijn. Als de groep associatief en symmetrisch is dan is de deelgroep dat normaal gezien ook. 
-\\We zien nu in de tabel dat er \textcolor{blue}{één niet-triviale deelgroep} is. Daarnaast bevat deze groep ook de triviale deelgroep die enkel bestaat uit het neutraal element ''e''.
+Aangezien dat een deelgroep zelf ook een groep is, moet deze dus altijd het neutraal element van de groep bevatten. Daarnaast moet de deelgroep ook overal bepaald zijn. Als de groep associatief is dan is de deelgroep dat normaal gezien ook.  \\ \\
+We hebben sowieso de triviale deelgroep die enkel het neutraal element bevat en de triviale deelgroep die de volledige groep bevat.
+\\We zien nu in de tabel dat er \textcolor{blue}{één niet-triviale deelgroep} is, dit is de deelgroep die enkel de rotaties bevat $R = \{e,r_1,r_2\}$.\\
+Tot slot vinden we ook nog de volgende deelgroepen: $M_1 = \{e,m_1\}, M_2 = \{e,m_2\}, M_3 = \{e,m_3\}$. \\
+Merk op dat $\{e,r_1\}$ bijvoorbeeld geen deelgroep is want $r_1\circ r_1 = r_2$ en $r_2$ behoort niet tot die deelgroep.  \\ \\
+We moeten nu enkel nog de normaal delers zoeken. We kijken eerst na of de deelgroep van de rotaties $R$ een normaaldeler is. Dit doen we door te kijken of elke linker nevenklassen ook een rechter nevenklassen is (zie oplossingsmethode).
+$$Re = R = eR$$
+$$Rr_1 = \{e,r_1,r_2\} = r_1R$$
+$$Rr_2 = \{e,r_1,r_2\} = r_2R$$
+$$Rm_1 = \{m_1,m_2,m_3\} = m_1R$$
+$$Rm_2 = \{m_1,m_2,m_3\} = m_2R$$
+$$Rm_3 = \{m_1,m_2,m_3\} = m_3R$$
+\\$R$ is dus een normaaldeler van $G$.\\
+Ook de twee triviale deelgroepen zijn uiteraard nevenklassen.\\
+$M_1, M_2, M_3$ zijn geen nevenklassen.\\
+$M_1$ is bijvoorbeeld geen nevenklassen want:
+$$M_1r_1 = \{r_1,m_2\} \neq \{r_1,m_3\} = r_1M_1$$
+
+
+
+
 \end{document}
