@@ -515,5 +515,180 @@ Zie definitie 2.5 deel I blz 97, definitie 1.3 en voorbeeld 1.5 blz 93.
 $\mathbb{Z}_{10}$ bevat de elementen $\{0,\dots ,9\}$ en de generatoren zijn dus $\{1,3,7,9\}$\\ \\
 $\mathbb{Z}_{11}$ bevat de elementen $\{0,\dots ,10\}$ en de generatoren zijn dus $\{1,2,3,4,5,6,7,8,9,10\}$ \\ \\
 $\mathbb{Z}_{12}$ bevat de elementen $\{0,\dots ,11\}$ en de generatoren zijn dus $\{1,5,7,11\}$
-
+\subsection{Oefening 4}
+Genereer de groep voortgebracht onder vermenigvuldiging door de matrices
+\[
+A =
+\begin{bmatrix}
+    0 & 1 \\
+   -1 & 0 \\
+\end{bmatrix}
+\text{ en }
+B = 
+\begin{bmatrix}
+    0       & 1 \\
+   1 & 0 \\
+\end{bmatrix}
+\]
+Bewijs dat die een niet-abelse groep is van orde 8.
+\\ \\ \textbf{Oplossingsmethode} \\ \\
+Definitie 2.1 (deel I blz. 93) : Een groep is een monoïde waarvoor elk element symmetriseerbaar is. Dus $\langle A, * \rangle$ is een groep asa :
+	\begin{itemize}
+		\item $*$ is overal bepaald
+		\item $x*(y*z) = (x*y)*z$ \quad (associatief)
+		\item $\exists e \in A : \forall x \in A : x*e = e*x = x$ \quad (neutraal element)
+		\item $\forall x : \exists x^{-1} \in A : x*x^{-1} = x^{-1}*x =e$ \quad (symmetriseerbaar)
+	\end{itemize}
+Het aantal elementen van een groep is de orde van de groep. De groep is niet-abels als de bewerking niet commutatief is. \\
+De definitie van een multiplicatieve generator vind je in deel I blz. 97.
+\\ \\ \textbf{Oplossing} \\ \\
+Zowel $A$ als $B$ zijn diagonaalmatrices, het vermenigvuldigen van twee diagonaal matrices resulteert opnieuw in een diagonaal matrix. \\
+Het vermenigvuldigen van $A$ en $B$ zal dus steeds resulteren in een matrix van de vorm
+\[
+\begin{bmatrix}
+    x_1 & 0 \\
+    0 & x_2 \\
+\end{bmatrix}
+\text{ of } 
+\begin{bmatrix}
+    0       & x_1 \\
+   x_2 & 0 \\
+\end{bmatrix}
+\]
+Waarbij $x_1 = \pm 1$ en $x_2 = \pm 1$.\\
+Hieruit kunnen we dus berekenen dat er in totaal 8 combinaties mogelijk zijn.\\ \\
+We generen eerst alle elementen met de matrix $A$.
+\[
+A^0 =
+\begin{bmatrix}
+    	1 & 0 \\
+	0 & 1 \\
+\end{bmatrix}
+\quad
+A^1 =
+\begin{bmatrix}
+    	0 & 1 \\
+	-1 & 0 \\
+\end{bmatrix}
+\quad
+A^2 =
+\begin{bmatrix}
+    	-1 & 0 \\
+	0 & -1 \\
+\end{bmatrix}
+\quad
+A^3 =
+\begin{bmatrix}
+    	0 & -1 \\
+	1 & 0 \\
+\end{bmatrix}
+\]
+Aangezien dat $A^4$ terug gelijk is aan de eenheidsmatrix en we deze al zijn tegen gekomen tijdens de generatie met $A$ stoppen we bij $A^3$.\\ \\
+Nu genereren we alle elementen met de matrix $B$.
+\[
+B^0 =
+\begin{bmatrix}
+    	1 & 0 \\
+	0 & 1 \\
+\end{bmatrix}
+\quad
+B^1 =
+\begin{bmatrix}
+    	0 & 1 \\
+	1 & 0 \\
+\end{bmatrix}
+\]
+Nu genereren we ook nog de combinaties van $A$ en $B$.
+\[
+A^1 * B^1 =
+\begin{bmatrix}
+    	1 & 0 \\
+	0 & -1 \\
+\end{bmatrix}
+\quad
+A^2 * B^1 =
+\begin{bmatrix}
+    	0 & -1 \\
+	-1 & 0 \\
+\end{bmatrix}
+\quad
+A^2 * B^2 =
+\begin{bmatrix}
+    	-1 & 0 \\
+	0 & -1 \\
+\end{bmatrix}
+\quad
+A^3 * B^1 =
+\begin{bmatrix}
+    	-1 & 0 \\
+	0 & 1 \\
+\end{bmatrix}
+\]
+Nu hebben we dus 8 unieke elementen voor onze groep, namelijk:
+\[
+\begin{bmatrix}
+    	1 & 0 \\
+	0 & 1 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+    	0 & 1 \\
+	-1 & 0 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+    	-1 & 0 \\
+	0 & -1 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+    	0 & -1 \\
+	1 & 0 \\
+\end{bmatrix}
+\]
+\[
+\begin{bmatrix}
+    	0 & 1 \\
+	1 & 0 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+    	1 & 0 \\
+	0 & -1 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+    	0 & -1 \\
+	-1 & 0 \\
+\end{bmatrix}
+\quad
+\begin{bmatrix}
+    	-1 & 0 \\
+	0 & 1 \\
+\end{bmatrix}
+\]
+\\ \\Nu moeten we nog bewijzen dat deze elementen samen een groep vormen:
+\begin{itemize}
+	\item Deze bewerking is duidelijk overal bepaald we hebben alle combinaties van diagonaal matrices met $\pm 1$ als elementen. Deze met elkaar vermenigvuldigen levert terug een diagonaal matrix op van hetzelfde type.
+	\item Het vermenigvuldigen van matrices is associatief
+	\item Deze verzameling bevat het neutraal element voor vermenigvuldiging van matrices, nl. de eenheidsmatrix.
+	\item Elk element kan ook worden gesymmetriseerd.
+\end{itemize}
+We kunnen dus spreken over een groep, aangezien deze 8 elementen bevat is de orde van de groep ook 8.\\ \\
+De vermenigvuldiging van matrices is niet commutatief, dus deze groep is niet abels.
+\subsection{Oefening 5}
+Beschouw een groep $ G = (\mathbb{Z}_7/\{0\},.)$ van de gehele getallen modulo 7 zonder nul en met de vermenigvuldiging modulo 7. Bepaal de orde van al de elementen. Is de groep commutatief?
+\\ \\ \textbf{Oplossingsmethode} \\ \\
+De orde van een element $x$ is het kleinste natuurlijke getal $r$ waarvoor $x^r = e$ met $e$ het neutraal element. Zie def 2.5 deel I blz 97.
+\\ \\ \textbf{Oplossing} \\ \\
+De verzameling $G$ bevat de elementen $\{1,2,3,4,5,6\}$, waarbij $1$ het neutraal element is.\\ We gaan nu voor elk element apart zijn orde na.
+\begin{enumerate}
+	\item De orde van 1 is 1 want $1^1 = 1$
+	\item De orde van 2 is 3 want $2^3 = 1$
+	\item De orde van 3 is 6 want $(3^2)^3= 2^3 = 1$
+	\item De orde van 4 is 1 want $4^3 =  1$
+	\item De orde van 5 is 6 want $(5^2)^3 = 4^3 = 1$
+	\item De orde van 6 is 2 want $6^2 = 1$
+\end{enumerate}
+De groep is commutatief want de vermenigvuldiging is commutatief.
 \end{document}
