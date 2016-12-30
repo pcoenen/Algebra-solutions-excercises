@@ -702,6 +702,61 @@ Als $G$ een cyclische groep is dan bestaat er een generator $g$ zodat $G = \{g^0
 Als $H$ een deelgroep is van $G$ dan bevat $H$ dus minstens één element $g^k \in G$. \\
 Aangezien dat $H$ een groep is moet $H$ ook $\forall i \in \mathbb{N}: (g^k)^i$ bevatten, want een groep is overal bepaald.\\ \\
 $g^k$ is dus een generator voor $H$ en $H$ is dus een cyclische groep.
-
 \end{proof}
+\newpage
+\section{Oefenzitting 3}
+\subsection{Oefening 1}
+Beschouw $\mathbb{Z}_{24} = \langle Z, +, .\rangle$.
+\begin{enumerate}[label=(\alph*)]
+	\item Ga na of $I = \{0,3,6,9,12,15,18,21\}$ in deze ring een ideaal is.
+	\item Is $I$ een prinicipaal ideaal ? Zo ja ga na welke elementen de generatoren zijn.
+	\item Is $I$ een priemideaal ? Bepaal de quotiëntring $\mathbb{Z}_{24}|_I$
+	\item Is $I$ een maximaal ideaal en zo ja, ga na dat de quotiëntring een veld is en bepaal de karakteristieken ervan.
+	\item (extra) Bewijs dat elk ideaal in $\mathbb{Z}_n$ een principaal ideaal is (voor elke n).
+\end{enumerate}
+\textbf{Oplossingsmethode} \\ \\
+In deel II blz. 6 vind je een voorbeeld dat bijna analoog is aan deze oefening.
+\begin{enumerate}[label=(\alph*)]
+	\item Gebruik defintie van een ring, zie deel I blz 114 en de def. van een ideaal zie deel I def. 4.1 blz 117.
+	\item Principaal ideaal deel II blz 4.
+	\item Een ideaal $\mathbb{D}$ in een ring $\mathbb{R}$ is een priemideaal als geldt (zie deel II blz. 6):
+		$$\forall a, b \in R \text{ en } ab \in D: a\in D \text{ of } b\in D.$$
+	\item Om na te gaan of een we een maximaal ideaal hebben gaan we na of de quotiëntring een veld is (stelling 7 deel II blz 9, def. van een veld zie blz 5). \\
+		Def. van de karakteristiek zie blz. 10 stelling 8. Gebruik stelling 9 blz 10 om de karakteristiek snel te vinden.
+\end{enumerate}
+\textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item We kijken eerst na of $I$ een ring is, het is duidelijk dat aan alle voorwaarden (zie deel I blz. 114) is voldaan om een ring te zijn.\\ \\
+		$I$ bevat alle mogelijke veelvouden van 3 in $\mathbb{Z}_{24}$.\\
+		Het is duidelijk dat het aftrekken van twee veelvouden van 3 terug resulteert in een veelvoud van 3. Aangezien dat $I$ alle mogelijke veelvouden bevat 
+is aan de eerste voorwaarden van een ideaal al voldaan. \\
+		Ook het vermenigvuldigen van een veelvoud van 3 met een getal uit $\mathbb{Z}_{24}$ zal terug resulteren in een veelvoud van 3, ook aan de tweede voorwaarde is dus voldaan.\\
+		$I$ is dus een ideaal.
+	\item $I$ is een principaal ideaal, de generatoren bekomen we door de elementen van $I$ te nemen die geen delers gemeenschappelijk hebben met 24.\\ 		 		De elementen $\{3,9,15,21\}$ zijn dus generatoren.
+	\item Zoek dus voor elk element $x$ van I alle mogelijke a's en b's die een element zijn van $\mathbb{Z}_{24}$ zodat $a*b$ gelijk is aan $x$. Controleer vervolgens of a of b een element is van $I$. \\
+		\\Voor bijvoorbeeld $18 \in I$ vinden we 
+			\begin{itemize}
+				\item $1, 18 \in \mathbb{Z}_{24} \text{ en } 18 \in I$
+				\item $1, 9 \in \mathbb{Z}_{24} \text{ en } 9 \in I$
+				\item $3, 6 \in \mathbb{Z}_{24} \text{ en } 3 \in I$
+			\end{itemize}
+		Als je dit nakijkt voor elk element van $I$ zal je zien dat $I$ een priemideaal is. \\ \\
+		De quotientring is dus $\{I,1+I,2+I\}$ \\ $ = \{\{0,3,6,9,12,15,18,21\}, \{1,4,7,10,13,16,19,22\},\{2,5,8,11,14,17,20,23\}\}$
+	\item Om te kijken of de quotiëntring een veld is stellen we eerst de bewerkingstabel op, we gebruiken de volgende afkortingen:
+		$$ I = \{0,3,6,9,12,15,18,21\} \quad A = \{1,4,7,10,13,16,19,22\}$$ $$ B = \{2,5,8,11,14,17,20,23\} $$
+		\\ Dit geeft ons de volgende bewerkingstabel: \\
+		$$\begin{tabular}{l|lll}
+			.   & $I$ & $A$ & $B$ \\ \hline
+			$I$ & $I$ & $I$ & $I$ \\
+			$A$ & $I$ & $A$ & $B$ \\
+			$B$ & $I$ & $B$ & $A$
+		\end{tabular}$$ \\
+		Het is dus duidelijk dat $I$ het neutraal element is voor de optelling en dat $A$ het neutraal element is voor de vermigvuldiging. \\ \\
+		In de tabel zien we ook dat elk van nul ($= I$) verschillend element een mulitplicatieve inverse heeft, voor $A$ is dit $A$ en voor $B$ is dit $B$. \\ \\ 		
+		Het is dus een veld en dus is $I$ een maximaal ideaal.  \\ \\
+		We weten al dat de karakteristiek van een eindig veld een priemgetal is (stelling 9 deel II blz. 10). We moeten dus opzoek gaan naar een priemgetal $\mu$ zodat $\mu A = I$ en $\mu B = I$. \\ \\
+		Als we $\mu A$ doen dan vermenigvuldigen we elk element van $A$ met $\mu$ en moeten we uiteindelijk alle elementen van $I$ bekomen. Aangezien dat $A$ het element $1$ bevat moet dus $\mu 1 = \mu \in I$. We moeten dus opzoek naar een priemgetal $\mu$ in $I$. Aangezien dat $I$ maar één priemgetal bevat, namelijk 3 moet $\mu$ dus gelijk zijn aan 3.\\	
+		We zien nu dat $3*A = I$ en $3*B = I$.  \\ \\
+		De karakteristiek van $I$ is dus 3.
+\end{enumerate}
 \end{document}
