@@ -759,4 +759,58 @@ is aan de eerste voorwaarden van een ideaal al voldaan. \\
 		We zien nu dat $3*A = I$ en $3*B = I$.  \\ \\
 		De karakteristiek van $I$ is dus 3.
 \end{enumerate}
+\subsection{Oefening 2}
+Bepaal van de volgende uitbreidingsstructuren de kardinaliteit en de dimensie van de uitbreiding. Ga ook na of het velden zijn.
+\begin{enumerate}[label=(\alph*)]
+	\item $\mathbb{Q}(\sqrt[3]{2})$
+	\item $\mathbb{Z}_5[x]|_{(x^2+1)}$
+	\item $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$
+	\item (extra) $\mathbb{Q}[x]|_{(x^3-5)}$
+	\item (extra) $\mathbb{Z}_3[x]|_{(x^3-5)}$
+\end{enumerate}
+\textbf{Oplossingsmethode} \\ \\
+Werkingsmethode voor uitbreiding van een veld zie cursus deel II blz 17.  \\
+De kardinaliteit is de het aantal elementen in een verzameling, zie deel II blz. 1. \\
+Defintie van een veld is te vinden in deel II  blz. 8.
+Om na te gaan of uitbreidingsstructuur een veld is gebruiken we meestal stelling 19 blz. 15 deel II.
+\\ \\ \textbf{Oplossing} \\
+\begin{enumerate}[label=(\alph*)]
+	\item We zoeken eerst de veelterm $w(x) \in \mathbb{Q}$ zodat $w(\sqrt[3]{2}) = 0$.\\ Dit is dus de veelterm $x^3-2$. \\
+		$\mathbb{Q}(\sqrt[3]{2})$ is dus van de vorm $a + b \sqrt[3]{2} + c \sqrt[3]{2}^2$, waarbij $a,b,c \in \mathbb{Q}$.\\ \\
+		Aangezien dat we voor zowel $a,b$ als $c$ eender welk element van $\mathbb{Q}$ mogen invullen zijn er dus $Q^3$ combinaties mogelijk en is dus de kardinaliteit van het uitbreidingsveld gelijk aan $|\mathbb{Q}|^3 = \infty$.\\
+		Aangezien dat $\mathbb{Q}(\sqrt[3]{2})$ van de vorm $a + b \sqrt[3]{2} + c \sqrt[3]{2}^2$ is, wat een tweede graadsveelterm is, is de dimensie van $\mathbb{Q}(\sqrt[3]{2})$ gelijk aan $2+1 = 3$. \\ \\
+		Om een veld te kunnen zijn moet het een commutatieve ring zijn (def. zie blz. 3 deel II), het is eenvoudig na te gaan dat dit een commutatieve ring is.\\
+		We moeten nu enkel nog aantonen dat elk element een multiplicatieve inverse heeft. De uitwerking hiervan is nogal lang. Maar het komt erop neer dat je voor elk element van $x \in \mathbb{Q}(\sqrt[3]{2})$ een element $y \in \mathbb{Q}(\sqrt[3]{2})$ moet vinden zodat $xy = 1$.\\ Je moet dus $d,e$ en $f$ zoeken zodat voldaan is aan:
+		$$(a + b \sqrt[3]{2} + c \sqrt[3]{2}^2)(d + e \sqrt[3]{2} + f \sqrt[3]{2}^2) = 1$$
+	\item $\mathbb{Z}_5[x]$ is de verzameling van veeltermen over $\mathbb{Z}_5$.\\ $\mathbb{Z}_5[x]|_{(x^2+1)}$ is de verzameling van nevenklassen die bij deling door $x^2+1$ dezelfde rest opleveren (zie deel II blz. 15), dit zijn dus alle veeltermen van de vorm $a + bx$ waarbij $a,b \in \mathbb{Z}_5$. \\ \\
+		Gezien dat $a$ en $b$ allebei elementen zijn van $\mathbb{Z}_5$ en $\mathbb{Z}_5$ 5 elementen bevat, is het totaal aantal mogelijkheden dus gelijk aan $5^2 = 25$. De kardinaliteit van de uitbreiding is dus 25.\\ \\
+		$a + bx$ is een veelterm van de tweede graad, de dimensie is dus gelijk aan $2 + 1 = 3$. \\ \\
+		Nagaan of dit een veld is kunnen we nu eenvoudig met stelling 19 op blz. 15 van deel II.\\ 
+		We moeten dus enkel nagaan of $x^2+1$ irreduceerbaar is over $\mathbb{Z}_5$, met andere woorden moeten we dus nagaan of $x^2+1$ nulpunten heeft in $\mathbb{Z}_5$.\\
+		Dit is het geval, 2 en 3 zijn bijvoorbeeld nulpunten want $2^2 + 1 = 5 \text{ mod } 5 = 0$ en $3^2 + 1 = 10 \text{ mod } 5 = 0$.
+	\item $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ zijn dus alle veeltermen van de vorm $a + bx + cx^2 + dx^3$ waarin dat $a,b,c,d \in \mathbb{Z}_3$. \\ \\
+		$\mathbb{Z}_3$ bevat 3 elementen. Aangezien dat $a,b,c$ en $d$ elementen zijn van $\mathbb{Z}_3$ zijn er in totaal $4^3 = 81$ mogelijkheden. De kardinaliteit van $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ is dus 81. \\ \\
+		 $a + bx + cx^2 + dx^3$ is een veelterm van graad 4, de dimensie is dus $4+1 = 5$.\\ \\
+		Nu kunnen we terug m.b.v. stelling 19 op blz. 15 bepalen of dat $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ een veld is. We moeten dus nagaan of $x^4+x^3+x-1$ nulpunten heeft in $\mathbb{Z}_3$.
+		\begin{align*}
+			x = 0 \quad &\rightarrow \quad 0^4+0^3+0-1 = -1\\
+			x = 1 \quad &\rightarrow \quad 1^4 + 1^3 + 1 -1 = 2\\
+			x = 2 \quad &\rightarrow \quad 2^4 + 2^3 + 2 -1 = 25 \text{ mod } 3 = 1
+		\end{align*}
+		$x^4+x^3+x-1$ heeft dus geen nulpunten in $\mathbb{Z}_3$, bijgevolg is $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ een veld.
+	\item $\mathbb{Q}[x]|_{(x^3-5)}$ zijn alle veeltermen van de vorm $a + bx + cx^2$ met $a,b,c \in \mathbb{Q}$ \\ \\
+		De kardinaliteit van $\mathbb{Q}[x]|_{(x^3-5)}$ is dus gelijk aan $|\mathbb{Q}|^3 = \infty$. \\ \\
+		$a + bx + cx^2$ is een veelterm van de 2de graad, dus de dimensie is $2 + 1 = 3$. \\ \\
+		We zoeken nu het nulpunt van $x^3-5$
+		\begin{align*}
+			&\, x^3 - 5 = 0 \\
+			\Leftrightarrow  &\, x^3 = 5 \\
+			\Leftrightarrow  &\, x = \sqrt[3]{5}
+		\end{align*}
+		Aangezien dat $\sqrt[3]{5} \notin \mathbb{Q}$ is $x^3-5$ dus irreduceerbaar over $\mathbb{Q}$ en dus is $\mathbb{Q}[x]|_{(x^3-5)}$ geen veld.
+	\item $\mathbb{Z}_3[x]|_{(x^3-2x+1)}$ zijn alle veeltermen van de vorm  $a + bx + cx^2$ met $a,b,c \in \mathbb{Z}_3$ \\ \\
+		De kardinaliteit van $\mathbb{Z}_3[x]|_{(x^3-2x+1)}$ is dus gelijk aan $|\mathbb{Z}_3|^3 = 3^3 = 27$. \\ \\
+		 $a + bx + cx^2$ is een veelterm van de 2de graad, de dimensie is dus $2 + 1 = 3$. \\ \\
+		$x^3-2x+1$ is niet irreduceerbaar over $\mathbb{Z}_3$ want 1 is een nulpunt, dus is $\mathbb{Z}_3[x]|_{(x^3-2x+1)}$ geen veld.
+\end{enumerate}
 \end{document}
