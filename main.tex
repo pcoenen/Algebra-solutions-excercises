@@ -874,4 +874,44 @@ $2$ &     & $2$ & $0$ & $0$ & $0$ & $2$ \\ \hline
 	De ontbinding van $w(x)$ is dus:
 		$$w(x) = x^5 + x^4 + x + 1 = (x-2)(x-\gamma)(x^3 - \gamma x^2 - \gamma ^2 x - \gamma ^3)$$
 \end{enumerate}
+\newpage
+\section{Oefenzitting 4}
+\subsection{Oefening 1}
+Splits in irreduceerbare factoren over $\mathbb{Z}_3$:
+\begin{enumerate}[label=(\alph*)]	
+	\item $x^5+2x^4+x^3+x^2+2$
+	\item $x^7+x^6+x^5-x^3+x^2-x-1$
+\end{enumerate}
+\textbf{Oplossingsmethode}
+\begin{enumerate}
+	\item Kijk eerst of de veelterm nulpunten heeft in $\mathbb{Z}_3$.
+	\item Kijk of de veelterm (of de verkregen veeltermen) nog kunnen worden opgesplitst in irreduceerbare veeltermen van een lagere graad.
+\end{enumerate}
+\textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]	
+	\item We zoeken eerst de nulpunten in $\mathbb{Z}_3$ voor de gegeven veelterm, dit nulpunt zal gelijk zijn aan $2$.\\
+		Met het algoritme van Horner doen we nu een eerste splitsing in factoren: \\
+			$$\begin{tabular}{l|llllll}
+    & $1$ & $2$ & $1$ & $1$ & $0$ & $2$ \\
+$2$ &     & $2$ & $2$ & $0$ & $2$ & $1$ \\ \hline
+    & $1$ & $1$ & $0$ & $1$ & $2$ & $0$
+\end{tabular}$$
+		Nu weten we dat:
+			$$x^5+2x^4+x^3+x^2+2 = (x-2)(x^4+x^3+x+2)$$
+		We proberen $(x^4+x^3+x+2)$ nu nog verder te ontbinden.\\
+		Aangezien dat deze veelterm geen nulpunten heeft in $\mathbb{Z}_3$, moeten we kijken of we hem nog kunnen verder ontbinden in twee irreduceerbare veeltermen van de tweedegraad.\\
+		In $\mathbb{Z}_3$ zijn er drie irreduceerbare veeltermen van graad 2:
+			$$(x^2 + 1) \quad \quad (x^2+x+2) \quad \quad (x^2+2x+2)$$
+		We zien nu dat $x^4+x^3+x-1$ kan bekomen worden door het product van $(x^2 + 1)$ en $(x^2+x+2)$.\\
+		Nu is de reductie volledig, want alle bekomen veeltermen zijn irreduceerbaar:
+			$$x^5+2x^4+x^3+x^2+2 = (x-2)(x^4+x^3+x+2) = (x-2)(x^2 + 1)(x^2+x+2)$$
+	\item Voor $x^7+x^6+x^5-x^3+x^2-x-1$ vinden we geen nulpunten in $\mathbb{Z}_3$.\\ \\
+		We kijken nu of we de veelterm kunnen delen door één van de irreduceerbare veeltermen van de tweedegraad.\\
+			$$(x^2 + 1) \quad \quad (x^2+x+2) \quad \quad (x^2+2x+2)$$ \\
+		De veelterm kan inderdaad gedeeld worden door $(x^2 + 1)$ dit geeft:
+			$$x^7+x^6+x^5-x^3+x^2-x-1 = (x^2 + 1)(x^5+x^4+2x^2+2x+2)$$
+		$(x^5+x^4+2x^2+2x+2)$ heeft geen nulpunten in $\mathbb{Z}_3$, maar kan worden gedeeld door $(x^2+2x+2)$.\\ \\
+		Zo krijgen we uiteindelijk de irreduceerbare veelterm ontbinding:
+			$$x^7+x^6+x^5-x^3+x^2-x-1 = (x^2 + 1)(x^2+2x+2)(x^3-x^2+1)$$
+\end{enumerate}
 \end{document}
