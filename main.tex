@@ -920,6 +920,8 @@ Zij $GF(4) = \{0,1,\xi, \xi + 1\}$ met $\xi^2 + \xi + 1 = 0$.
 	\item Bepaal alle monische veeltermen irreduceerbare veeltermen van graad twee over $GF(4)$.	
 	\item Contrueer $GF(4^2)$ uit $GF(4)$ m.b.v. de veelterm $x^2+ x\xi + \xi$.
 	\item Bereken $\alpha ^i$ voor $i = 0,1,\dots ,15$ met $\alpha ^2 + \alpha \xi + \xi$.
+	\item Bepaal de minimaalveeltermen van de elementen van $GF(4^2)$ over $GF(4)$.
+	\item Bepaal de primitieve veeltermen van graad $2$ over $GF(4)$.
 \end{enumerate}
 \textbf{Oplossingsmethode} \\ \\
 Voorbeeld berekenen van de minimale veelterm zie voorbeeld 22 en 23 blz. 25-26 deel II.  \\ \\
@@ -1036,5 +1038,36 @@ $C_{11}$ & $=$ & $\{11,14\}$ & $\rightarrow$ & $m^{(11)} = (x -\alpha ^{11})(x- 
 			\item $x^2 + x + \xi$
 			\item $x^2 + x + \xi + 1$
 		\end{itemize}
+\end{enumerate}
+\subsection{Oefening 4}
+Zij $GF(4) = \{0,1,2,\alpha, \alpha + 1, \alpha + 2, 2\alpha, 2\alpha + 1, 2\alpha + 2\}$ met $\alpha ^2 = 1 - \alpha$.
+\begin{enumerate}[label=(\alph*)]
+	\item Ga na dat $x^2+\alpha x + 1$ irreduceerbaar is over $GF(9)$.
+	\item Construeer $GF(81)$ uit $GF(9)$ door uit te breiden met een nulpunt $\xi$ van deze veelterm.
+\end{enumerate}
+\textbf{Oplossingsmethode} \\ \\
+Uitbreiding van een veld, zie voorbeeld 19 blz. 24. \\
+Bekijk ook voorbeeld 15 blz. 17. \\ \\
+De multiplicatieve orde van een element $x$ is de kleinste positieve waarde $r$ zodat $x^r = 1$
+\\ \\ \textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item Aangezien dat $x^2+\alpha x + 1$ een tweedegraadsveelterm is, is deze irreduceerbaar als de veelterm geen nulpunten heeft in $GF(9)$. \\
+		Welke waarde we uit $\{0,1,2,\alpha, \alpha + 1, \alpha + 2, 2\alpha, 2\alpha + 1, 2\alpha + 2\}$ ook invullen voor $x$ we verkijgen nooit 0.
+	\item Aangezien dat $\xi$ een nulpunt is van $x^2+\alpha x + 1$ geldt:
+			$$GF(81) = GF(9)|_{x^2+\alpha x + 1} = \{a\xi+b|a,b\in GF(3)\}$$
+	\item We verheffen $\xi$ tot we de macht $r$ vinden waarbij $\xi^r = 1$. \\
+		$$\begin{tabular}{lll}
+$\xi ^1$    & $=$ & $\xi$                    \\
+$\xi ^2$    & $=$ & $\alpha \xi - 1$         \\
+$\xi ^3$    & $=$ & $ - \alpha \xi - \alpha$ \\
+$\xi ^4$    & $=$ & $\xi - \alpha$           \\
+$\xi ^5$    & $=$ & $2$                      \\
+$\xi ^6$    & $=$ & $2\xi$                   \\
+$\xi ^7$    & $=$ & $\alpha\xi + 1$          \\
+$\xi ^8$    & $=$ & $\alpha\xi - \alpha$     \\
+$\xi ^9$    & $=$ & $\xi - \alpha$           \\
+$\xi ^{10}$ & $=$ & $1$                     
+\end{tabular}$$
+		De multiplicatieve orde van $\xi$ is dus $10$. 
 \end{enumerate}
 \end{document}
