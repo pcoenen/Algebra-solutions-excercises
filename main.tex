@@ -1070,4 +1070,75 @@ $\xi ^{10}$ & $=$ & $1$
 \end{tabular}$$
 		De multiplicatieve orde van $\xi$ is dus $10$. 
 \end{enumerate}
+\newpage
+\section{Oefenzitting 5}
+\subsection{Oefening 1}
+Ontbind $x^n - 1$ in irreduceerbare factoren over $GF(q)$ voor:
+\begin{enumerate}[label=(\alph*)]
+	\item $ (n, q) = (15, 4)$
+	\item $(n, q) = (5, 4)$
+	\item $(n, q) = (15, 3)$
+\end{enumerate}
+\textbf{Oplossingsmethode}
+\begin{enumerate}
+	\item Zoek de kleinste $k$ zodat $q^k \text{ mod } n = 1$
+	\item Neem $\alpha$ het primitief element van $GF(q^k)$.
+	\item Neem $\beta = \alpha ^{(q^k-1)/n}$
+	 \item Bereken de cyclotomische nevenklassen modulo $n$ over $GF(q)$ (zie blz. 25).
+	\item Bepaal voor elke nevenklassen de minimaal veelterm
+	\item Het product van al deze minimale veeltermen is nu gelijk aan $x^n - 1$
+\end{enumerate}
+\textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item \textbf{Stap 1} \\ \\
+		We zoeken $k$:
+			$$4^2 \text{ mod } 15 = 1 \quad \Rightarrow \quad k = 2 $$
+		 \textbf{Stap 2} \\ \\
+		Aangezien dat $GF(4)$ al een uitbreiding is van $GF(2)$ moeten we dit schrijven als $GF(4^2) = GF(16) = GF(2^4)$.\\
+		We vinden nu de volgende irreduceerbare veelterm van de 4de graad over $GF(2)$ (zie tabel blz. 27):
+			$$x^4 + x + 1$$
+		Nu nemen we $\alpha$ als nulpunt van deze veelterm zodat:
+			$$\alpha ^4 + \alpha + 1 = 0 \quad \Rightarrow \quad \alpha ^4 = \alpha + 1$$
+		$\alpha$ is nu het primitief element van $GF(4^2) = GF(2^4)$.
+		 \\ \\ \textbf{Stap 3} \\ \\
+		Nu hebben we:
+			$$\beta = \alpha ^{1} = \alpha$$
+		\textbf{Stap 4} \\ \\
+			We bepalen nu de cyclotomische nevenklassen modulo $15$ over $GF(4)$:
+			$$\begin{tabular}{lll}
+$C_0$  & $=$ & $\{0\}$     \\
+$C_1$  & $=$ & $\{1,4\}$   \\
+$C_2$  & $=$ & $\{2,8\}$   \\
+$C_3$  & $=$ & $\{3,12\}$  \\
+$C_4$  & $=$ & $\{4,1\}$   \\
+$C_5$  & $=$ & $\{5\}$     \\
+$C_6$  & $=$ & $\{6,9\}$   \\
+$C_7$  & $=$ & $\{7,13\}$  \\
+$C_8$  & $=$ & $\{8,2\}$   \\
+$C_9$  & $=$ & $\{9,6\}$   \\
+$C_{10}$ & $=$ & $\{10\}$    \\
+$C_{11}$ & $=$ & $\{11,14\}$
+\end{tabular}$$
+		\textbf{Stap 5} \\ \\
+		Omdat $\beta = \alpha$ moeten we hier de $\beta$'s niet omzetten naar $\alpha$'s.\\ \\
+		We krijgen zo de volgende minimale veeltermen:
+		$$\begin{tabular}{lllll}
+$C_0$  & $=$ & $\{0\}$     & $\rightarrow$ & $m^{(0)} = (x - \alpha ^0) = x + 1 $                                 \\
+$C_1$  & $=$ & $\{1,4\}$   & $\rightarrow$ & $m^{(1)} = (x - \alpha ^ 1)(x-\alpha ^4) = x ^2 +\xi x + \xi $       \\
+$C_2$  & $=$ & $\{2,8\}$   & $\rightarrow$ & $m^{(2)} = (x -\alpha ^2)(x- \alpha ^8) = x^2 + (1+\xi) x + \xi + 1$ \\
+$C_3$  & $=$ & $\{3,12\}$  & $\rightarrow$ & $m^{(3)} = (x -\alpha ^3)(x- \alpha ^{12}) = x^2 + \xi x + 1$          \\
+$C_4$  & $=$ & $\{4,1\}$   & $\rightarrow$ & $m^{(4)} = m^{(1)}$         \\
+$C_5$  & $=$ & $\{5\}$     & $\rightarrow$ & $m^{(5)} = (x -\alpha ^5) = x + \xi$                                 \\
+$C_6$  & $=$ & $\{6,9\}$   & $\rightarrow$ & $m^{(6)} = (x -\alpha ^6)(x- \alpha ^9) = x^2 + (\xi + 1)x + 1$      \\
+$C_7$  & $=$ & $\{7,13\}$  & $\rightarrow$ & $m^{(7)} = (x -\alpha ^7)(x- \alpha ^{13}) =  x^2 + x + \xi$         \\
+$C_8$  & $=$ & $\{8,2\}$   &  $\rightarrow$ & $m^{(8)} = m^{(2)}$  \\
+$C_9$  & $=$ & $\{9,6\}$   & $\rightarrow$ & $m^{(9)} = m^{(6)}$       \\
+$C_{10}$ & $=$ & $\{10\}$    & $\rightarrow$ & $m^{(10)} = (x - \alpha ^{10}) = x + \xi + 1$                          \\
+$C_{11}$ & $=$ & $\{11,14\}$ & $\rightarrow$ & $m^{(11)} = (x -\alpha ^{11})(x- \alpha ^{14}) = x^2 + x + \xi + 1$     
+\end{tabular}$$
+		\textbf{Stap 6} \\ \\
+		Onze veelterm is nu ontbonden. \\ \\
+		$x^{15} - 1 = (x+1)(x ^2 +\xi x + \xi)(x^2 + (1+\xi) x + \xi + 1)( x^2 + \xi x + 1)(x + \xi)(x^2 + (\xi + 1)x + 1)(x^2 + x + \xi)(x^2 + x + \xi)( x + \xi + 1)(x^2 + x + \xi + 1)$
+				
+\end{enumerate}
 \end{document}
