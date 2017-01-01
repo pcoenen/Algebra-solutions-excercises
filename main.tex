@@ -914,4 +914,127 @@ $2$ &     & $2$ & $2$ & $0$ & $2$ & $1$ \\ \hline
 		Zo krijgen we uiteindelijk de irreduceerbare veelterm ontbinding:
 			$$x^7+x^6+x^5-x^3+x^2-x-1 = (x^2 + 1)(x^2+2x+2)(x^3+2x^2+1)$$
 \end{enumerate}
+\subsection{Oefening 3}
+Zij $GF(4) = \{0,1,\xi, \xi + 1\}$ met $\xi^2 + \xi + 1 = 0$.
+\begin{enumerate}[label=(\alph*)]
+	\item Bepaal alle monische veeltermen irreduceerbare veeltermen van graad twee over $GF(4)$.	
+	\item Contrueer $GF(4^2)$ uit $GF(4)$ m.b.v. de veelterm $x^2+ x\xi + \xi$.
+	\item Bereken $\alpha ^i$ voor $i = 0,1,\dots ,15$ met $\alpha ^2 + \alpha \xi + \xi$.
+\end{enumerate}
+\textbf{Oplossingsmethode} \\ \\
+Voorbeeld berekenen van de minimale veelterm zie voorbeeld 22 en 23 blz. 25-26 deel II.  \\ \\
+De minimaalveelterm van een primitief element wordt een primitieve veelterm genoemd, zie def 13 blz. 24 deel II.\\
+\\ \\ \textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item We zoeken dus alle veeltermen van de vorm $x^2 + bx + c = 0$, die irreduceerbaar zijn dit zijn dus al de veeltermen van deze vorm die geen nulpunt hebben in 	$GF(4)$.\\
+		Om dit te doen stellen we de volgende tabel op:
+		$$\begin{tabular}{c|cccc}
+$c\backslash b$     & $0$ & $1$ & $\xi$ & $\xi + 1$ \\ \hline
+$0$     & \textcolor{red}{$\times$}     & \textcolor{red}{$\times$}     & \textcolor{red}{$\times$}       & \textcolor{red}{$\times$}           \\
+$1$       & \textcolor{green}{$\times$}     & \textcolor{blue}{$\times$}     &       &           \\
+$\xi$     &  \textcolor{orange}{$\times$}    &     &       &  \textcolor{green}{$\times$}          \\
+$\xi + 1$ & \textcolor{blue}{$\times$}     &     &  \textcolor{green}{$\times$}      &          
+\end{tabular}$$
+Deze tabel stellen we op de volgende manier op: \\ \\
+\textcolor{red}{Als $x = 0$} dan kan de veelterm  $x^2 + bx + c = 0$ enkel nog gelijk zijn aan nul als $c = 0$. We zetten in de hele rij, voor $c= 0$ een kruisje in de tabel. \\ \\
+\textcolor{green}{Als $x = 1$} dan is de veelterm van de vorm $1 + b + c = 0$ hieraan is voldaan als:
+	\begin{itemize}
+		\item $b = 1$ en $c = 0$
+		\item $b = 0$ en $c = 1$
+		\item $b = \xi$ en $c = \xi + 1$
+		\item $b = \xi + 1$ en $c = \xi$
+	\end{itemize}
+Al deze gevallen duiden we nu ook aan in de tabel met een kruisje. \\ \\
+\textcolor{blue}{Als $x = \xi$} dan is de veelterm van de vorm $\xi ^2 + b\xi + c = 0$ wat gelijk is aan $\xi + 1 + b\xi + c = 0$ hieraan is voldaan als:
+	\begin{itemize}
+		\item $b = 0$ en $c = \xi + 1$
+		\item $b = 1$ en $c = 1$
+		\item $b = \xi$ en $c = 0$
+		\item $b = \xi + 1$ en $c = \xi$
+	\end{itemize}
+Ook deze gevallen duiden we nu ook aan in de tabel met een kruisje. \\ \\
+\textcolor{orange}{Als $x = \xi + 1$} dan is de veelterm van de vorm $(\xi + 1) ^2 + b(\xi + 1) + c = 0$ wat gelijk is aan $\xi + b\xi + b + c = 0$ hieraan is voldaan als:
+	\begin{itemize}
+		\item $b = 0$ en $c = \xi$
+		\item $b = 1$ en $c = 1$
+		\item $b = \xi$ en $c = \xi + 1$
+		\item $b = \xi + 1$ en $c = 0$
+	\end{itemize}
+Ook deze gevallen duiden we nu ook aan in de tabel met een kruisje.\\ \\
+Alle combinaties voor waardes voor $b$ en $c$ die nog geen kruisje hebben in de tabel zijn nu de monische irreduceerbare veeltermen van graad twee over $GF(4)$.\\
+Dit zijn dus:
+	$$(x^2 + \xi x + 1) \quad (x^2 + (\xi + 1) x + 1) \quad (x^2 + x + \xi) \quad (x^2 + \xi x + \xi) \quad$$
+	$$(x^2 + x + \xi + 1) \quad (x^2 + (\xi + 1) x + \xi + 1)$$
+	\item Volledig analoog voorbeeld is te vinden op blz. 24 deel II. \\ \\
+		We nemen $\alpha$ als nulpunt voor de gegeven veelterm, zodat $\alpha ^2+ \alpha\xi + \xi = 0$. \\ \\
+		Zo vinden we dan:
+		$$GF(4^2) = \{a\alpha + b | a,b \in GF(4)\}$$
+	\item Als  $\alpha ^2 + \alpha \xi + \xi$ dan geldt dat  $\alpha ^2 = \alpha \xi + \xi$.\\
+		We weten ook dat $\xi^2 = \xi + 1$.\\ \\
+		Nu bereken we alle $\alpha ^i$:
+		$$\begin{tabular}{lcl}
+$\alpha$ & $\rightarrow$    & $\alpha$                        \\
+$\alpha ^2$ & $\rightarrow$  & $\alpha \xi + \xi$              \\
+$\alpha ^3$ & $\rightarrow$  & $\alpha + \xi +1$               \\
+$\alpha ^4$ & $\rightarrow$  & $\alpha + \xi$                  \\
+$\alpha ^5$ & $\rightarrow$  & $\xi$                           \\
+$\alpha ^6$ & $\rightarrow$  & $\alpha \xi$                    \\
+$\alpha ^7$ & $\rightarrow$  & $\alpha \xi + \alpha + \xi + 1$ \\
+$\alpha ^8$& $\rightarrow$   & $\alpha \xi + 1$                \\
+$\alpha ^9$& $\rightarrow$   & $\alpha \xi + \xi + 1$                \\
+$\alpha ^{10}$& $\rightarrow$   & $\xi + 1$                \\
+$\alpha ^{11}$& $\rightarrow$   & $\alpha\xi + \alpha$                \\
+$\alpha ^{12}$& $\rightarrow$   & $\alpha + 1$                \\
+$\alpha ^{13}$& $\rightarrow$   & $\alpha \xi + \xi + \alpha$                \\
+$\alpha ^{14}$& $\rightarrow$   & $\alpha \xi + \alpha + 1$                \\
+$\alpha ^{15}$ & $\rightarrow$ & $1$                            
+\end{tabular}$$
+	\item Om de minimale veelterm te bepalen moeten we eerst de cyclotomische nevenklassen bepalen, dit geeft ons:
+		$$\begin{tabular}{lll}
+$C_0$  & $=$ & $\{0\}$     \\
+$C_1$  & $=$ & $\{1,4\}$   \\
+$C_2$  & $=$ & $\{2,8\}$   \\
+$C_3$  & $=$ & $\{3,12\}$  \\
+$C_4$  & $=$ & $\{4,1\}$   \\
+$C_5$  & $=$ & $\{5\}$     \\
+$C_6$  & $=$ & $\{6,9\}$   \\
+$C_7$  & $=$ & $\{7,13\}$  \\
+$C_8$  & $=$ & $\{8,2\}$   \\
+$C_9$  & $=$ & $\{9,6\}$   \\
+$C_{10}$ & $=$ & $\{10\}$    \\
+$C_{11}$ & $=$ & $\{11,14\}$
+\end{tabular}$$
+Hieruit kunnen we nu de volgende minimale veeltermen berekenen:
+$$\begin{tabular}{lllll}
+$C_0$  & $=$ & $\{0\}$     & $\rightarrow$ & $m^{(0)} = (x - \alpha ^0) = x + 1 $                                 \\
+$C_1$  & $=$ & $\{1,4\}$   & $\rightarrow$ & $m^{(1)} = (x - \alpha ^ 1)(x-\alpha ^4) = x ^2 +\xi x + \xi $       \\
+$C_2$  & $=$ & $\{2,8\}$   & $\rightarrow$ & $m^{(2)} = (x -\alpha ^2)(x- \alpha ^8) = x^2 + (1+\xi) x + \xi + 1$ \\
+$C_3$  & $=$ & $\{3,12\}$  & $\rightarrow$ & $m^{(3)} = (x -\alpha ^3)(x- \alpha ^{12}) = x^2 + \xi x + 1$          \\
+$C_4$  & $=$ & $\{4,1\}$   & $\rightarrow$ & $m^{(4)} = m^{(1)}$         \\
+$C_5$  & $=$ & $\{5\}$     & $\rightarrow$ & $m^{(5)} = (x -\alpha ^5) = x + \xi$                                 \\
+$C_6$  & $=$ & $\{6,9\}$   & $\rightarrow$ & $m^{(6)} = (x -\alpha ^6)(x- \alpha ^9) = x^2 + (\xi + 1)x + 1$      \\
+$C_7$  & $=$ & $\{7,13\}$  & $\rightarrow$ & $m^{(7)} = (x -\alpha ^7)(x- \alpha ^{13}) =  x^2 + x + \xi$         \\
+$C_8$  & $=$ & $\{8,2\}$   &  $\rightarrow$ & $m^{(8)} = m^{(2)}$  \\
+$C_9$  & $=$ & $\{9,6\}$   & $\rightarrow$ & $m^{(9)} = m^{(6)}$       \\
+$C_{10}$ & $=$ & $\{10\}$    & $\rightarrow$ & $m^{(10)} = (x - \alpha ^{10}) = x + \xi + 1$                          \\
+$C_{11}$ & $=$ & $\{11,14\}$ & $\rightarrow$ & $m^{(11)} = (x -\alpha ^{11})(x- \alpha ^{14}) = x^2 + x + \xi + 1$     
+\end{tabular}$$
+	\item In dit geval is $\alpha$ ons primitief element.\\ \\
+		We geven twee voorbeelden:
+		\begin{itemize}
+			\item $m^{(6)}$ is geen primitieve veelterm want:
+				$$m^{(6)} = (x -\alpha ^6)(x- \alpha ^9) = x^2 - \alpha ^6 x - \alpha ^9 - \alpha ^{15}$$
+				Aangezien dat $\alpha ^{15} = 1$ is deze veelterm dus niet opgebouwd uit enkel het primitief element en is deze veelterm dus geen primitieve veelterm. 
+			\item $m^{(2)}$ is wel een primitieve veelterm want:
+					$$m^{(2)} = (x -\alpha ^2)(x- \alpha ^8) = x^2 - \alpha ^2 x - \alpha ^8 x - \alpha ^{10}  $$
+				Deze veelterm is dus duidelijk enkel opgebouwd uit het primitieve element.
+		\end{itemize}
+		We bekomen zo de volgende vier primitieve veeltermen:
+		\begin{itemize}
+			\item $x ^2 +\xi x + \xi $
+			\item $x^2 + (1+\xi) x + \xi + 1$
+			\item $x^2 + x + \xi$
+			\item $x^2 + x + \xi + 1$
+		\end{itemize}
+\end{enumerate}
 \end{document}
