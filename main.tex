@@ -1236,4 +1236,169 @@ $m ^{(2)}$  & $=$ & $(x-\beta ^2)(x-\beta ^3)$           &$=$   & $x^2 + (\alpha
 	$C_0$ heeft één element $\Rightarrow$ minimaalveelterm van graad 1. \\
 	$C_1$ heeft acht elementen $\Rightarrow$ minimaalveelterm van graad 8. \\
 	$C_3$ heeft acht elementen $\Rightarrow$ minimaalveelterm van graad 8. \\	
+\subsection{Oefening 3}
+	Gegeven een $(n, k)$ lineaire blokcode $\mathbb{C}$ over $GF(2)$:
+		$$\mathbb{C} = \{000000, 000111, 011001, 011110, 101011, 101100, 110010, 110101\}$$
+	\begin{enumerate}[label=(\alph*)]
+	\item  Is deze code wel een blokcode?
+	\item Is deze code wel lineair?
+	\item Wat is $n$? Wat is $k$?
+	\item Construeer een generatormatrix $G$ voor deze code. Codeer enkele informatiewoorden.
+	\item Ga over op een equivalente code met een generatormatrix $\tilde{G}$ in standaardvorm.
+	\item Bepaal de pariteitstestmatrix $\tilde{H}$ van die equivalente code.
+	\item Bepaal de pariteitstestmatrix $H$ van de oorspronkelijke code.
+	\item Hoeveel fouten kan men detecteren? Hoeveel fouten kan men verbeteren?
+	\item Vervolledig de decoderingstabel voor deze code?
+			$$\begin{tabular}{llllllll}
+000000 & 000111 & 011001 & 011110 & 101011 & 101100 & 110010 & 110101 \\
+100000 & 100111 & 111001 & 111110 & 001011 & 001100 & 010010 & 010101 \\
+010000 & 010111 & 001001 & 001110 & 111011 & 111100 & 100010 & 100101 \\
+001000 & 001111 & 010001 & 010110 & 100011 & 100100 & 111010 & 111101 \\
+000100 & 000011 & 011101 & 011010 & 101111 & 101000 & 110110 & 110001 \\
+000010 & 000101 & 011011 & 011100 & 101001 & 101110 & 110000 & 110111
+\end{tabular}$$
+	\item  De syndroomtabel maak je door het syndroom van de vertegenwoordigers van de nevenklassen in een tabel te steken.\\
+		Zie voorbeeld 47 blz. 46.
+	\item Je ontvangt 110011. Wat is de gedecodeerde boodschap?
+	\item Is deze code perfect?
+\end{enumerate}
+	 \textbf{Oplossingsmethode}
+	\begin{enumerate}[label=(\alph*)]
+	\item  Defintie van blokcode blz. 33
+	\item Defintie en gevolg van een lineaire blokcode zie blz. 39.
+	\item $n$ is de lengte van het code woord.\\
+		$k$ is de grootte van de basis of de lengte van het informatiewoord.
+	\item Theorie blz. 39-40 en voorbeeld 41 blz. 40.
+	\item We zetten m.b.v. rij-operaties en kolompermutaties de matrix $G$ om naar een matrix van de vorm $[I|P]$, zie blz. 43 bovenaan.
+	\item De pariteitstestmatrix $\tilde{H} = [-P^T | I]$, zie blz. 43 bovenaan.
+	\item We kunnen de matrix $H$ bekomen uit de matrix $\tilde{H}$ door de permutaties die we hebben doorgevoerd op $G$ omgekeerd uit te voeren op $\tilde{H}$. \\ Zie voorbeeld 45 blz. 43.
+	\item Een lineaire code kan $d - 1$ fouten detecteren, zie gevolg 5 blz. 37.\\
+		Het aantal fouten dat je kan verbeteren is $(d-1)/2$, zie blz. 39.
+	\item Zie voorbeeld 46 blz. 44.
+	\item Zie voorbeeld 46 blz. 44
+	\item Je ontvangt 110011. Wat is de gedecodeerde boodschap?
+	\item Theorie zie blz. 49.\\ Voorbeeld zie voorbeeld 51 blz. 49.
+	\end{enumerate}
+	
+	\noindent \\ \textbf{Oplossing}
+	\begin{enumerate}[label=(\alph*)]
+	\item Dit is een blokcode want elk woord heeft dezelfde lengte.
+	\item Deze code is lineair want de som en het verschil van twee codewoorden is terug een codewoord.\\ De code bevat ook het nulcodewoord.
+	\item $n$ is de lengte van het codewoord, dus $n = 3$. \\
+		Om $k$ te bepalen, moeten we eerst uit de gegevens codewoorden een basis vormen.\\
+		Een voorbeeld van zo'n basis is :
+			$$b_1 = 000111 \quad b_2 = 011001 \quad b_3 = 101011$$
+		$k$ is nu gelijk aan de dimensie van de basis $k = 3$.
+	\item De generatormatrix kunnen we construeren door een matrix te maken waarin dat de rijen achtereenvolgens $b_1, b_2, b_3$ zijn.
+$$ G = 
+ \begin{bmatrix}
+0 & 0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 & 1 & 1
+ \end{bmatrix}$$
+		We coderen bijvoorbeeld $011110$:
+			$$011110 = 1* b_1 + 1* b_2 = 110$$
+		We gaan na dat dit juist is:
+		 $$  \begin{bmatrix}1&1&0\end{bmatrix}  \begin{bmatrix}
+0 & 0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 & 1 & 1
+ \end{bmatrix} = 011110$$
+	\item Om dit te doen voeren we de volgende kolompermutaties uit op de matrix $G$:
+			\begin{itemize}	
+				\item Verwissel kolom 1 en 3
+				\item Verwissel daarna kolom 1 en 4
+			\end{itemize}
+		We hebben nu de matrix $\tilde{G}$:
+			$$ \tilde{G} = 
+ \begin{bmatrix}
+1 & 0 & 0& 0  & 1 & 1 \\
+0 & 1 & 0& 1 & 0 & 1 \\
+0 & 0 & 1&1 & 1 & 1
+ \end{bmatrix}$$
+	\item Aan de hand van de matrix $\tilde{G}$ bepalen we nu de matrix $\tilde{H}$:
+			$$ \tilde{H} = 
+ \begin{bmatrix}
+ 0  & 1 & 1 &1 & 0 & 0 \\
+ 1 & 0 & 1 &0 & 1 & 0 \\
+1 & 1 & 1 &0 & 0 & 1
+ \end{bmatrix}$$
+	\item We voeren de volgende permutaties uit op $\tilde{H}$:
+		\begin{itemize}	
+			\item Verwissel kolom 1 en 4
+			\item Verwissel daarna kolom 1 en 3
+		\end{itemize}
+		Dit geeft ons de volgende matrix:
+			$$ H = 
+ \begin{bmatrix}
+ 1  & 1 & 1 & 0& 0 & 0 \\
+ 1 & 0 & 0 &1 & 1 & 0 \\
+ 1 & 1 & 0 &1 & 0 & 1
+ \end{bmatrix}$$
+	\item De afstand van deze code is gelijk aan $d = 3$. \\ \\
+		Het aantal fouten dat je kan detecteren is dus $s = 3 - 1 = 2$.\\
+		Het aantal fouten dat je kan verbeteren is dus $t = (3-1)/2 = 1$.
+	\item In $GF(2)$ kunnen we $2^6$ verschillende codes maken van lengte $6$. De decodeertabel moet al deze codes bevatten.
+		We moeten dus nog 16 codes, oftewel 2 rijen met codes toevoegen.\\ \\
+		De huidige tabel bevat bijvoorbeeld de codes $000001$ en $100001$ nog niet, we voegen de nevenklassen waartoe deze behoren nog toe:
+			$$\begin{tabular}{l|lllllll}
+000000 & 000111 & 011001 & 011110 & 101011 & 101100 & 110010 & 110101 \\ \hline
+100000 & 100111 & 111001 & 111110 & 001011 & 001100 & 010010 & 010101 \\
+010000 & 010111 & 001001 & 001110 & 111011 & 111100 & 100010 & 100101 \\
+001000 & 001111 & 010001 & 010110 & 100011 & 100100 & 111010 & 111101 \\
+000100 & 000011 & 011101 & 011010 & 101111 & 101000 & 110110 & 110001 \\
+000010 & 000101 & 011011 & 011100 & 101001 & 101110 & 110000 & 110111 \\
+000001 & 000110 & 011000 & 011111 & 101010 & 101101 & 110011 & 110100 \\
+100001 & 100110 & 111000 & 111111 & 001010 & 001101 & 010011 & 010100
+\end{tabular}$$
+	\item We verkrijgen de volgende syndroomtabel:
+		$$\begin{tabular}{l|l}
+vertegenwoordiger & syndroom \\ \hline
+000000            & 000      \\
+100000            & 111      \\
+010000            & 101      \\
+001000            & 100      \\
+000100            & 011      \\
+000010            & 010      \\
+000001            & 001      \\
+100001            & 110     
+\end{tabular}$$
+	\item Hiervoor bereken we eerst het syndroom voor $v$:
+		$$s = v H^T$$
+	 $$  \begin{bmatrix}1&1&0&0&1&1\end{bmatrix}  \begin{bmatrix}
+ 1  & 1 & 1 & 0& 0 & 0 \\
+ 1 & 0 & 0 &1 & 1 & 0 \\
+ 1 & 1 & 0 &1 & 0 & 1
+ \end{bmatrix} = \begin{bmatrix}0&0&1\end{bmatrix}$$
+		Aangezien dat $s = 001$ vinden we in de syndroomtabel dat $e = 000001$.\
+		Zo vinden we:
+			$$c = v - e = 110011 - 000001 = 110010$$
+	\item We bereken eerst $r_p$:
+		$$\begin{tabular}{l|c}
+\multicolumn{1}{c|}{c} & $S_c(0)$                                                \\ \hline
+000000                 & $\{000000\}$  \\
+000111                 & $\{000111\}$ \\
+011001                 & $\{011001\}$  \\
+011110                 & $\{011110\}$  \\
+101011                 & $\{101011\}$  \\
+101100                 & $\{101100\}$  \\
+110010                 & $\{110010\}$  \\
+110101                 & $\{110101\}$ 
+\end{tabular}$$
+		$$\begin{tabular}{l|c}
+\multicolumn{1}{c|}{c} & $S_c(1)$                                                \\ \hline
+000000                 & $\{000000,000001,000010,000100,001000,010000,100000\}$  \\
+000111                 & $\{000111,000110,000101,000011,001111,010111, 100111\}$ \\
+011001                 & $\{011001,011000,011011,011101,010001,001001,111001\}$  \\
+011110                 & $\{011110,011111,011100,011010,010110,001110,111110\}$  \\
+101011                 & $\{101011,101010,101001,101111,\textcolor{blue}{100011},111011,001011\}$  \\
+101100                 & $\{101100,101101,101110,101000,\textcolor{green}{100100},111100,001100\}$  \\
+110010                 & $\{110010,110011,110000,110110,111010,100010,010010\}$  \\
+110101                 & $\{110101,110100,110111,110001,111101,100101,010101\}$ 
+\end{tabular}$$	
+	$r_p$ is duidelijk gelijk aan $1$ want als we \textcolor{blue}{100011} en \textcolor{green}{100100} allebei nog één bit laten afwijken dan zijn ze gelijk aan elkaar.\\ \\
+	In $GF(2)$ kunnen we $2^6 = 64$ verschillende codes maken van lengte $6$, in de tabel voor $S_c(1)$ staan er $7*8 = 56$. We zullen dus pas bij $S_c(2)$ alle mogelijke combinaties bekomen (en veel dubbels).\\
+	We weten nu dus dat $r_d = 2$.\\ \\
+	Het is dus een quasi-perfecte code want $r_d = r_p + 1$.
+	\end{enumerate}
 \end{document}
