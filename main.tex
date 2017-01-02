@@ -1094,12 +1094,9 @@ Ontbind $x^n - 1$ in irreduceerbare factoren over $GF(q)$ voor:
 		We zoeken $k$:
 			$$4^2 \text{ mod } 15 = 1 \quad \Rightarrow \quad k = 2 $$
 		 \textbf{Stap 2} \\ \\
-		Aangezien dat $GF(4)$ al een uitbreiding is van $GF(2)$ moeten we dit schrijven als $GF(4^2) = GF(16) = GF(2^4)$.\\
-		We vinden nu de volgende irreduceerbare veelterm van de 4de graad over $GF(2)$ (zie tabel blz. 27):
-			$$x^4 + x + 1$$
-		Nu nemen we $\alpha$ als nulpunt van deze veelterm zodat:
-			$$\alpha ^4 + \alpha + 1 = 0 \quad \Rightarrow \quad \alpha ^4 = \alpha + 1$$
-		$\alpha$ is nu het primitief element van $GF(4^2) = GF(2^4)$.
+		Om de oefening eenvoudig te houden gebruiken we het resultaat van oefening 3.b van de vorige oefenzitting. \\ \\
+		$\alpha$ is dus het nulpunt van de irreduceerbare veelterm $x^2+ x\xi + \xi$ uit $GF(4)$. \\ \\
+		We gaan er voor deze oefening dus vannuit dat we $GF(2)$ al hebben uitgebreid tot $GF(4)$, waarbij dat $\xi$ het primitief element is van $GF(4)$.
 		 \\ \\ \textbf{Stap 3} \\ \\
 		Nu hebben we:
 			$$\beta = \alpha ^{1} = \alpha$$
@@ -1121,6 +1118,24 @@ $C_{11}$ & $=$ & $\{11,14\}$
 \end{tabular}$$
 		\textbf{Stap 5} \\ \\
 		Omdat $\beta = \alpha$ moeten we hier de $\beta$'s niet omzetten naar $\alpha$'s.\\ \\
+		We bereken eerst alle $\alpha ^i$'s:
+		$$\begin{tabular}{lcl}
+$\alpha$ & $\rightarrow$    & $\alpha$                        \\
+$\alpha ^2$ & $\rightarrow$  & $\alpha \xi + \xi$              \\
+$\alpha ^3$ & $\rightarrow$  & $\alpha + \xi +1$               \\
+$\alpha ^4$ & $\rightarrow$  & $\alpha + \xi$                  \\
+$\alpha ^5$ & $\rightarrow$  & $\xi$                           \\
+$\alpha ^6$ & $\rightarrow$  & $\alpha \xi$                    \\
+$\alpha ^7$ & $\rightarrow$  & $\alpha \xi + \alpha + \xi + 1$ \\
+$\alpha ^8$& $\rightarrow$   & $\alpha \xi + 1$                \\
+$\alpha ^9$& $\rightarrow$   & $\alpha \xi + \xi + 1$                \\
+$\alpha ^{10}$& $\rightarrow$   & $\xi + 1$                \\
+$\alpha ^{11}$& $\rightarrow$   & $\alpha\xi + \alpha$                \\
+$\alpha ^{12}$& $\rightarrow$   & $\alpha + 1$                \\
+$\alpha ^{13}$& $\rightarrow$   & $\alpha \xi + \xi + \alpha$                \\
+$\alpha ^{14}$& $\rightarrow$   & $\alpha \xi + \alpha + 1$                \\
+$\alpha ^{15}$ & $\rightarrow$ & $1$                            
+\end{tabular}$$
 		We krijgen zo de volgende minimale veeltermen:
 		$$\begin{tabular}{lllll}
 $C_0$  & $=$ & $\{0\}$     & $\rightarrow$ & $m^{(0)} = (x - \alpha ^0) = x + 1 $                                 \\
@@ -1136,9 +1151,45 @@ $C_9$  & $=$ & $\{9,6\}$   & $\rightarrow$ & $m^{(9)} = m^{(6)}$       \\
 $C_{10}$ & $=$ & $\{10\}$    & $\rightarrow$ & $m^{(10)} = (x - \alpha ^{10}) = x + \xi + 1$                          \\
 $C_{11}$ & $=$ & $\{11,14\}$ & $\rightarrow$ & $m^{(11)} = (x -\alpha ^{11})(x- \alpha ^{14}) = x^2 + x + \xi + 1$     
 \end{tabular}$$
-		\textbf{Stap 6} \\ \\
+		\\ \textbf{Stap 6} \\ \\
 		Onze veelterm is nu ontbonden. \\ \\
-		$x^{15} - 1 = (x+1)(x ^2 +\xi x + \xi)(x^2 + (1+\xi) x + \xi + 1)( x^2 + \xi x + 1)(x + \xi)(x^2 + (\xi + 1)x + 1)(x^2 + x + \xi)(x^2 + x + \xi)( x + \xi + 1)(x^2 + x + \xi + 1)$
-				
+		$x^{15} - 1 = (x+1)(x ^2 +\xi x + \xi)(x^2 + (1+\xi) x + \xi + 1)( x^2 + \xi x + 1)(x + \xi)(x^2 + (\xi + 1)x + 1)(x^2 + x + \xi)(x^2 + x + \xi)( x + \xi + 1)(x^2 + x + \xi + 1)$ \\
+	\item \textbf{Stap 1} \\ \\
+		We zoeken $k$:
+			$$4^2 \text{ mod } 5 = 1 \quad \Rightarrow \quad k = 2 $$	
+		\textbf{Stap 2} \\ \\
+		Aangezien dat $GF(4)$ al een uitbreiding is van $GF(2)$ moeten we dit schrijven als $GF(4^2) = GF(16) = GF(2^4)$.\\
+		We vinden nu de volgende irreduceerbare veelterm van de 4de graad over $GF(2)$ (zie tabel blz. 27):
+			$$x^4 + x + 1$$
+		Nu nemen we $\alpha$ als nulpunt van deze veelterm zodat:
+			$$\alpha ^4 + \alpha + 1 = 0 \quad \Rightarrow \quad \alpha ^4 = \alpha + 1$$
+		$\alpha$ is nu het primitief element van $GF(4^2) = GF(2^4)$.
+		 \\ \\ \textbf{Stap 3} \\ \\
+		We berekenen hieruit nu $\beta$:
+			$$\beta = \alpha ^{(4^2 -1)/5} = \alpha ^3$$
+		\textbf{Stap 4} \\ \\
+			We bepalen nu de cyclotomische nevenklassen modulo $5$ over $GF(4)$:
+			$$\begin{tabular}{lll}
+				$C_0$  & $=$ & $\{0\}$     \\
+				$C_1$  & $=$ & $\{1,4\}$   \\
+				$C_2$  & $=$ & $\{2,3\}$   \\
+			\end{tabular}$$
+		\textbf{Stap 5} \\ \\
+		Gebruikmakende van $\beta  = \alpha ^3$ en $\alpha ^4 = \alpha + 1$ , bepalen we nu alle $B^i$'s:
+			$$\begin{tabular}{lll}
+				$\beta ^1$  & $=$ & $\alpha ^3$                          \\
+				$\beta ^2$  & $=$ & $\alpha ^3 + \alpha ^2$              \\
+				$\beta ^3$  & $=$ & $\alpha ^3 + \alpha$                 \\
+				$\beta ^4$  & $=$ & $\alpha ^3 + \alpha ^2 + \alpha + 1$                         
+			\end{tabular}$$
+		Hiermee berekenen we nu de minimaalveeltermen:
+		$$\begin{tabular}{lllll}
+$m ^{(0)}$  & $=$ & $(x-\beta ^0)$                        &$=$   & $x+1$                                                           \\
+$m ^{(1)}$  & $=$ & $(x-\beta ^1)(x-\beta ^4)$           &$=$   & $x^2 + (\alpha ^2 + \alpha + 1)x + (\alpha ^3 + \alpha ^2 + 1)$ \\
+$m ^{(2)}$  & $=$ & $(x-\beta ^2)(x-\beta ^3)$           &$=$   & $x^2 + (\alpha ^2 + \alpha)x + 1$                                          
+\end{tabular}$$
+		\textbf{Stap 6} \\ \\
+		We verkijgen nu de volgende ontbonden veelterm:
+		$$x^{5} - 1 = (x+1)(x^2 + (\alpha ^2 + \alpha + 1)x + (\alpha ^3 + \alpha ^2 + 1))(x^2 + (\alpha ^2 + \alpha)x + 1)$$
 \end{enumerate}
 \end{document}
