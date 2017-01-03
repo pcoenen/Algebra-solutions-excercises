@@ -1496,4 +1496,53 @@ H =
 		Door deze fout terug af te trekken van $v$ bekomen we $c$ terug.
 			$$c = v-e = \begin{bmatrix}\alpha ^5&\alpha ^3&\alpha ^6&1&\alpha ^4&1&\alpha ^3&\alpha ^2&\alpha ^5\end{bmatrix}$$
 \end{enumerate}
+\subsection{Oefening 2}
+\begin{enumerate}[label=(\alph*)]
+	\item Bepaal de generatorveelterm van een BCH-code van lengte $n = 12$ over $GF(7)$ die $t=2$ fouten kan verbeteren. Kies hierbij $l$ de kleinste waarde in $\mathbb{N}_0$ die de dimensie van de code maximaal maakt.
+	\item Decodeer met behulp van het PGZ(=Peterson-Gorenstein-Zierler)-algoritme het ontvangen woord $v(x) = 2x + 5x^2 + 6x^4 + x^4 + 4x^5$.
+\end{enumerate}
+\noindent \\ \textbf{Oplossingsmethode}
+\begin{enumerate}[label=(\alph*)]
+	\item Om dit op te lossen moeten we eerst $x^n-1$ factoriseren over $GF(q)$. Dit doen we volgens dezefde stappen als in de vorige oefenzitting.
+		De dimensie van een code is de lengte van het informatiewoord $i$ (zie blz. 40), we weten ook dat $c = iG$, de dimensie van het informatie woord is dus maximaal als de graad van $G$ minimaal is.\\ Zie ook voorbeeld 57 blz. 58.
+	\item Decodeer met behulp van het PGZ(=Peterson-Gorenstein-Zierler)-algoritme het ontvangen woord $v(x) = 2x + 5x^2 + 6x^4 + x^4 + 4x^5$.
+\end{enumerate}
+\noindent \\ \textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item We factoriseren eerst $x^12-1$ over $GF(7)$.\\ \\
+		\textbf{1)} $7^k \text{ mod } 12 = 1 \Rightarrow k = 7$. \\
+		\textbf{2)} $\alpha$ is primitief element van $GF(7^2)$ met  $\alpha ^2 = 6\alpha + 4$. \\
+		\textbf{3)} $\beta = \alpha ^4$. \\
+			Hiermee berekenen we:
+			$$\begin{tabular}{lllllll}
+$\beta ^1$ & $=$ & $5\alpha + 6$  & $\quad$ & $\beta ^7$  &$=$ & $2\alpha + 1$ \\
+$\beta ^2$ & $=$ & $3$            & $\quad$ & $\beta ^8$  &$=$ & $4$           \\
+$\beta ^3$ & $=$ & $\alpha + 4$   & $\quad$ & $\beta ^9$  &$=$ & $6\alpha + 3$ \\
+$\beta ^4$ & $=$ & $2$            & $\quad$ & $\beta ^{10}$ &$=$ & $5$           \\
+$\beta ^5$ & $=$ & $3\alpha  + 5$ & $\quad$ & $\beta ^{11}$ &$=$ & $4\alpha + 2$ \\
+$\beta ^6$ & $=$ & $6$            & $\quad$ & $\beta ^{12}$ &$=$ & $1$          
+\end{tabular}$$
+		\textbf{3)} We bepalen de nevenklassen module 12 in $GF(7)$: \\
+			$$\begin{tabular}{lllllll}
+$C_0$ & $=$ & \{0\}   & $\quad$ & $C_5$  & $=$ & \{5,11\} \\
+$C_1$ & $=$ & \{1,7\} & $\quad$ & $C_6$  & $=$ & \{6\}    \\
+$C_2$ & $=$ & \{2\}   & $\quad$ & $C_8$  & $=$ & \{8\}    \\
+$C_3$ & $=$ & \{3,9\} & $\quad$ & $C_10$ & $=$ & \{10\}   \\
+$C_4$ & $=$ & \{4\}   & $\quad$ &        &     &         
+\end{tabular}$$
+		\textbf{3)} We bepalen minimaalveeltermen: \\
+			$$\begin{tabular}{lllllll}
+$m^{(0)}$ & $=$ & $(x-\beta ^0) = x+6$                 & $\quad$ & $m^{(5)}$  & $=$ & $(x-\beta ^5)(x-\beta ^11) = x^2 + 2$ \\
+$m^{(1)}$ & $=$ & $(x-\beta ^1)(x-\beta ^7) = x^2 + 4$       & $\quad$ & $m^{(6)}$  & $=$ & $(x-\beta ^6) = x+1$                  \\
+$m^{(2)}$ & $=$ & $(x-\beta ^2) = x + 4$               & $\quad$ & $m^{(8)}$  & $=$ & $(x-\beta ^8) = x+3$                  \\
+$m^{(3)}$ & $=$ & $(x-\beta ^3)(x-\beta ^9) = x^2 + 1$ & $\quad$ & $m^{(10)}$ & $=$ & $(x-\beta ^{10}) = x+2$               \\
+$m^{(4)}$ & $=$ & $(x-\beta ^4) = x+5$                 & $\quad$ &            &     &                                      
+\end{tabular}$$
+	Nu moeten we enkel nog een vier opeenvolgende $\beta ^i$'s kiezen, zodat de graad van het product van de bijhorende minimaal veeltermen minimaal is.\\ \\
+	We kiezen $\beta ^1, \beta ^2, \beta ^3, \beta ^4$, waarbij $l = 1$ ook minimaal is in $\mathbb{N}_0$, het product van de bijhorende minimaal veeltermen is nu $g(x)$:
+		$$g(x) = (x^2+4)(x+4)(x^2+1)(x+5)$$
+		
+
+	\item Decodeer met behulp van het PGZ(=Peterson-Gorenstein-Zierler)-algoritme het ontvangen woord $v(x) = 2x + 5x^2 + 6x^4 + x^4 + 4x^5$.
+\end{enumerate}
 \end{document}
