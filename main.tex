@@ -1392,12 +1392,12 @@ vertegenwoordiger & syndroom \\ \hline
 000111                 & $\{000111,000110,000101,000011,001111,010111, 100111\}$ \\
 011001                 & $\{011001,011000,011011,011101,010001,001001,111001\}$  \\
 011110                 & $\{011110,011111,011100,011010,010110,001110,111110\}$  \\
-101011                 & $\{101011,101010,101001,101111,\textcolor{blue}{100011},111011,001011\}$  \\
+101011                 & $\{101011,101010,101001,101111,100011,111011,001011\}$  \\
 101100                 & $\{101100,101101,101110,101000,\textcolor{green}{100100},111100,001100\}$  \\
-110010                 & $\{110010,110011,110000,110110,111010,100010,010010\}$  \\
+110010                 & $\{110010,110011,110000,110110,111010,\textcolor{blue}{100010},010010\}$  \\
 110101                 & $\{110101,110100,110111,110001,111101,100101,010101\}$ 
 \end{tabular}$$	
-	$r_p$ is duidelijk gelijk aan $1$ want als we \textcolor{blue}{100011} en \textcolor{green}{100100} allebei nog één bit laten afwijken dan zijn ze gelijk aan elkaar.\\ \\
+	$r_p$ is duidelijk gelijk aan $1$ want als we \textcolor{blue}{100010} en \textcolor{green}{100100} allebei nog één bit laten afwijken dan zijn ze gelijk aan elkaar.\\ \\
 	In $GF(2)$ kunnen we $2^6 = 64$ verschillende codes maken van lengte $6$, in de tabel voor $S_c(1)$ staan er $7*8 = 56$. We zullen dus pas bij $S_c(2)$ alle mogelijke combinaties bekomen (en veel dubbels).\\
 	We weten nu dus dat $r_d = 2$.\\ \\
 	Het is dus een quasi-perfecte code want $r_d = r_p + 1$.
