@@ -18,6 +18,7 @@
 \usepackage{gensymb}
 \usepackage{hyperref}
 \usepackage{amsthm}
+\usepackage{tabularx}
 
 \newcommand\arrows[3]{
 	\quad
@@ -1402,4 +1403,84 @@ vertegenwoordiger & syndroom \\ \hline
 	We weten nu dus dat $r_d = 2$.\\ \\
 	Het is dus een quasi-perfecte code want $r_d = r_p + 1$.
 	\end{enumerate}
+\newpage
+\section{Oefenzitting 6}
+\subsection{Oefening 1}
+	$(9,7)$ Hamming code over GF(8).\\
+	$\alpha$ primitief element van $GF(8)$, nulpunt van $x^3 + x + 1$.\\ \\
+	\begin{tabularx}{\textwidth}{XX}
+$\alpha^0 = 1 = [100]$
+
+$\alpha^1 = \alpha = [010]$
+
+$\alpha^2 = \alpha^2 = [001]$
+
+$\alpha^3 = 1 + \alpha = [110]$
+
+&
+$\alpha^4 = \alpha + \alpha^2 = [011]$
+
+$\alpha^5 = 1 + \alpha + \alpha^2 = [111]$
+
+$\alpha^6 = 1 + \alpha^2 = [101]$
+
+$(\alpha^7 = 1 = [100])$
+\end{tabularx}
+Een generatormatrix en bijhorende pariteitsmatrix van de $(9,7)$ Hamming code over $GF(8)$ zijn:\\
+\[
+G =
+\begin{bmatrix}
+	\alpha^5 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+	\alpha^6 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+	1		 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	\alpha	 & 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+	\alpha^2 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+	\alpha^3 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+	\alpha^4 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0
+\end{bmatrix}
+\]
+
+\[
+H =
+\begin{bmatrix}
+	1 & 0 & 1 & \alpha	& \alpha^2	& \alpha^3	& \alpha^4 & \alpha^5	& \alpha^6 \\
+	0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1
+\end{bmatrix}
+\]
+\begin{enumerate}[label=(\alph*)]
+	\item Hoeveel codewoorden zijn er in de code?
+	\item Welke dimensies heeft de decoderingstabel?
+	\item Welke dimensies heeft de syndroomtabel?
+	\item Codeer een zelfgekozen informatiewoord.
+	\item Bereken voor het onder (d) bekomen codewoord $c: cH^T$.
+	\item Zet op het codewoord $c$ \'e\'en fout en bereken voor dit ontvangen woord $v$ het syndroom $s$.
+	\item Hoe kan men, zonder gebruik te maken van de syndroomtabel uit $s$ en $v$ het correcte codewoord terugvinden.
+\end{enumerate}
+\noindent \\ \textbf{Oplossingsmethode}
+	\begin{enumerate}[label=(\alph*)]
+	\item Het aantal codewoorden is $q^k$.
+	\item De decodeertabel heeft evenveel kolommen als het aantal codewoorden $q^k$. \\ Daarnaast bevat de decodeertabel alle mogelijke codes $q^n$, het aantal rijen is dus $q^n / q^k$.
+	\item De syndroomtabel heeft steeds 2 kolommen en het aantal rijen is steeds gelijk aan het aantal rijen van de decodeertabel $q^n / q^k$.
+	\item Een informatie woord $i$ kan gecodeerd worden door $c = iG$ te doen.\\ Zie voorbeeld 48 blz. 47.
+	\item Bij het berekenen van $c: cH^T$, bereken we eigenlijk het syndroom van $c$, hieruit kunnen we dan de fout afleiden en die fout terug aftrekken van $c$, maar als we $c$ correct hebben gecodeerd, dan zit er geen fout op $c$ en zal dus $cH^T = \begin{bmatrix}0&0\end{bmatrix}$.
+	\item Zet op het codewoord $c$ \'e\'en fout en bereken voor dit ontvangen woord $v$ het syndroom $s$.
+	\item Hoe kan men, zonder gebruik te maken van de syndroomtabel uit $s$ en $v$ het correcte codewoord terugvinden.
+	\end{enumerate}
+\noindent \\ \textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item Er zijn hier dus $8^7$ codewoorden.
+	\item De decodeertabel heeft $8^7$ kolommen en $8^9/8^7 = 8^2$ rijen.
+	\item De syndroomtabel heeft dus $8^2$ rijen en 2 kolommen.
+	\item We coderen:
+			$$i = \begin{bmatrix}001&111&101&100&011&100&110\end{bmatrix}$$
+		Doormiddel van de gegeven tabel voor $\alpha ^i$'s te gebruiken weten we dat dit gelijk is aan:
+			$$i = \begin{bmatrix}\alpha ^2&\alpha ^5 &\alpha ^6&1&\alpha ^4 &1&\alpha ^3\end{bmatrix}$$
+		Nu bereken we $c$, we gebruiken ook hier de tabel om alles terug om te zetten naar iets van de vorm $\alpha ^i$ :
+			$$c = iG = \begin{bmatrix}\alpha ^5&\alpha ^3&\alpha ^6&1&\alpha ^4&1&\alpha ^3&\alpha ^2&\alpha ^5\end{bmatrix}$$
+	\item We berekenen het syndroom voor $c$:
+			$$cH^T =  \begin{bmatrix}0&0\end{bmatrix}$$
+		Zoals verwacht zit er dus geen fout op $c$, de codering is dus juist verlopen. 
+	\item Zet op het codewoord $c$ \'e\'en fout en bereken voor dit ontvangen woord $v$ het syndroom $s$.
+	\item Hoe kan men, zonder gebruik te maken van de syndroomtabel uit $s$ en $v$ het correcte codewoord terugvinden.
+\end{enumerate}
 \end{document}
