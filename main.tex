@@ -1463,8 +1463,8 @@ H =
 	\item De syndroomtabel heeft steeds 2 kolommen en het aantal rijen is steeds gelijk aan het aantal rijen van de decodeertabel $q^n / q^k$.
 	\item Een informatie woord $i$ kan gecodeerd worden door $c = iG$ te doen.\\ Zie voorbeeld 48 blz. 47.
 	\item Bij het berekenen van $c: cH^T$, bereken we eigenlijk het syndroom van $c$, hieruit kunnen we dan de fout afleiden en die fout terug aftrekken van $c$, maar als we $c$ correct hebben gecodeerd, dan zit er geen fout op $c$ en zal dus $cH^T = \begin{bmatrix}0&0\end{bmatrix}$.
-	\item Zet op het codewoord $c$ \'e\'en fout en bereken voor dit ontvangen woord $v$ het syndroom $s$.
-	\item Hoe kan men, zonder gebruik te maken van de syndroomtabel uit $s$ en $v$ het correcte codewoord terugvinden.
+	\item Zie voorbeeld 48 blz. 47.
+	\item Zie voorbeeld 48 blz. 47.
 	\end{enumerate}
 \noindent \\ \textbf{Oplossing}
 \begin{enumerate}[label=(\alph*)]
@@ -1480,7 +1480,20 @@ H =
 	\item We berekenen het syndroom voor $c$:
 			$$cH^T =  \begin{bmatrix}0&0\end{bmatrix}$$
 		Zoals verwacht zit er dus geen fout op $c$, de codering is dus juist verlopen. 
-	\item Zet op het codewoord $c$ \'e\'en fout en bereken voor dit ontvangen woord $v$ het syndroom $s$.
-	\item Hoe kan men, zonder gebruik te maken van de syndroomtabel uit $s$ en $v$ het correcte codewoord terugvinden.
+	\item We zetten op $c$ de volgende fout:
+			$$e = \begin{bmatrix}0&0 &\alpha ^1&0&0&0&0\end{bmatrix}$$
+		Het ontvangen woord $v$ is nu gelijk aan $c$ plus de fout $e$:
+			$$v = c + e = \begin{bmatrix}\alpha ^5&\alpha ^3&\alpha ^5&1&\alpha ^4&1&\alpha ^3&\alpha ^2&\alpha ^5\end{bmatrix}$$
+		want
+			$$\alpha ^6 + \alpha = \alpha ^2 + 1 +  \alpha = \alpha ^5$$
+		Nu bereken we het syndroom van $v$:
+			$$s = vH^T =  \begin{bmatrix}\alpha &\alpha\end{bmatrix} = \alpha \text{ keer de derde kolom van } H $$
+	\item We kunnen $\begin{bmatrix}\alpha &\alpha\end{bmatrix}$ dus bekomen uit $H$ door:
+			$$\begin{bmatrix}\alpha &\alpha\end{bmatrix} = \begin{bmatrix}0&0 &\alpha&0&0&0&0\end{bmatrix} * H^T$$
+		Nu weten we dat:
+			$$e = \begin{bmatrix}0&0 &\alpha&0&0&0&0\end{bmatrix}$$
+		Wat dus gelijk is aan de fout die we op $c$ hadden gezet.\\ \\
+		Door deze fout terug af te trekken van $v$ bekomen we $c$ terug.
+			$$c = v-e = \begin{bmatrix}\alpha ^5&\alpha ^3&\alpha ^6&1&\alpha ^4&1&\alpha ^3&\alpha ^2&\alpha ^5\end{bmatrix}$$
 \end{enumerate}
 \end{document}
