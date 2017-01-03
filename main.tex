@@ -1522,7 +1522,7 @@ $\beta ^4$ & $=$ & $2$            & $\quad$ & $\beta ^{10}$ &$=$ & $5$          
 $\beta ^5$ & $=$ & $3\alpha  + 5$ & $\quad$ & $\beta ^{11}$ &$=$ & $4\alpha + 2$ \\
 $\beta ^6$ & $=$ & $6$            & $\quad$ & $\beta ^{12}$ &$=$ & $1$          
 \end{tabular}$$
-		\textbf{3)} We bepalen de nevenklassen module 12 in $GF(7)$: \\
+		\textbf{4)} We bepalen de nevenklassen module 12 in $GF(7)$: \\
 			$$\begin{tabular}{lllllll}
 $C_0$ & $=$ & \{0\}   & $\quad$ & $C_5$  & $=$ & \{5,11\} \\
 $C_1$ & $=$ & \{1,7\} & $\quad$ & $C_6$  & $=$ & \{6\}    \\
@@ -1530,7 +1530,7 @@ $C_2$ & $=$ & \{2\}   & $\quad$ & $C_8$  & $=$ & \{8\}    \\
 $C_3$ & $=$ & \{3,9\} & $\quad$ & $C_{10}$ & $=$ & \{10\}   \\
 $C_4$ & $=$ & \{4\}   & $\quad$ &        &     &         
 \end{tabular}$$
-		\textbf{3)} We bepalen minimaalveeltermen: \\
+		\textbf{5)} We bepalen minimaalveeltermen: \\
 			$$\begin{tabular}{lllllll}
 $m^{(0)}$ & $=$ & $(x-\beta ^0) = x+6$                 & $\quad$ & $m^{(5)}$  & $=$ & $(x-\beta ^5)(x-\beta ^11) = x^2 + 2$ \\
 $m^{(1)}$ & $=$ & $(x-\beta ^1)(x-\beta ^7) = x^2 + 4$       & $\quad$ & $m^{(6)}$  & $=$ & $(x-\beta ^6) = x+1$                  \\
@@ -1577,4 +1577,100 @@ Dit geeft ons dan:
 Uitendelijk bekomen we dan:
 	$$c(x) = v(x) - e(x) = 025614000000-100005000000 = 625614200000$$
 \end{enumerate}
+\subsection{Oefening 3}
+Beschouw een BCH-code van lengte $n=5$ over $GF(4)$ die $t=1$ fouten kan verbeteren. Kies hierbij $l$ de kleinste waarde in $\mathbb{N}_0$ die e dimensie van de code maximaal maakt. Decodeer het ontvangen woord $v =$ 10 11 11 11 01 met het PGZ algoritme.
+
+$GF(4)$ als uitbreiding van $GF(2)$\\
+Primitief element: $\eta$: nulpunt van $x^2 + x + 1$ over $GF(2)$.\\
+$\eta^2 + \eta + 1 = 0  \rightarrow  \eta^2 = 1 + \eta$\\
+$\eta^0 = 1$\hspace{0.5cm}$\eta^1 = \eta$\hspace{0.5cm}$\eta^2 = 1 + \eta$\hspace{0.5cm}$(\eta^3 = 1)$
+
+$GF(16)$ als uitbreiding van $GF(4)$\\
+Primitief element: $\alpha$: nulpunt van $x^2 + \eta x + \eta$ over $GF(4)$.\\
+$\alpha^2 + \eta \alpha + \eta = 0   \rightarrow  \alpha^2 = \eta + \eta \alpha$\\
+\begin{tabularx}{\textwidth}{XXX}
+$\alpha^{0} = 1$
+
+$\alpha^{1} = \alpha$
+
+$\alpha^{2} = \eta + \eta \alpha$
+
+$\alpha^{3} = \eta^2 + \alpha$
+
+$\alpha^{4} = \eta + \alpha$
+
+&
+
+$\alpha^{5} = \eta$
+
+$\alpha^{6} = \eta \alpha$
+
+$\alpha^{7} = \eta^2 + \eta^2 \alpha$
+
+$\alpha^{8} = 1 + \eta \alpha$
+
+$\alpha^{9} = \eta^2 + \eta \alpha$
+
+&
+
+$\alpha^{10} = \eta^2$
+
+$\alpha^{11} = \eta^2 \alpha$
+
+$\alpha^{12} = 1 + \alpha$
+
+$\alpha^{13} = \eta + \eta^2 \alpha$
+
+$\alpha^{14} = 1 + \eta^2 \alpha$
+\end{tabularx}
+\noindent \\ \textbf{Oplossingsmethode} \\ \\
+	Volledig analoog aan de vorige oefening.
+\\ \\ \\ \textbf{Oplossing} \\ \\
+	We factoriseren eerst $x^5-1$ over $GF(4)$.\\ \\
+		\textbf{1)} $4^k \text{ mod } 5 = 1 \Rightarrow k = 2$. \\
+		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(4^2)$ met  $\alpha ^2 = \eta + \eta\alpha$. \\
+		\textbf{3)} $\beta = \alpha ^3$. \\ \\
+			Hiermee berekenen we:
+			$$\begin{tabular}{lll}
+$\beta ^1$ & $=$ & $\alpha +\eta + 1$      \\
+$\beta ^2$ & $=$ & $\alpha\eta $           \\
+$\beta ^3$ & $=$ & $\alpha\eta + \eta + 1$ \\
+$\beta ^4$ & $=$ & $\alpha + 1$            \\
+$\beta ^5$ & $=$ & $1$                    
+\end{tabular}$$
+		\textbf{4)} We bepalen de nevenklassen module 5 in $GF(4)$: \\
+			$$\begin{tabular}{lll}
+$C_0$ & $=$ & \{0\}   \\
+$C_1$ & $=$ & \{1,4\} \\
+$C_2$ & $=$ & \{2,3\}
+\end{tabular}$$
+Als we $\beta ^2$ en $\beta ^3$ als nulpunten van $g(x)$ nemen dan is de graad van $g(x)$ minimaal:
+	$$g(x) =  m^{(2)}$$
+Nu decoderen we het gegeven woord.\\ \\
+Aangezien dat $v =$ 10 11 11 11 01:
+	$$v(x) = 1 + \eta^2 x + \eta^2 x^2 + \eta^2 x^3 + \eta x^4$$
+We vullen eerst alle nulpunten van $g(x)$ in in $v(x)$, dit geeft ons:
+$$\begin{tabular}{lllll}
+$S_1$ & $=$ & $v(\beta ^2)$ & $=$ & $\alpha\eta + 1$ \\
+$S_2$ & $=$ & $v(\beta ^3)$ & $=$ & $\alpha\eta + \eta$ \\
+\end{tabular}$$
+We stellen $\nu = 1$, dit geeft ons:
+	$$H^{(1)} = \begin{bmatrix}\alpha\eta + 1 \end{bmatrix}$$
+det(H) $\neq 0$, dus $\nu$ is inderdaad gelijk aan $2$. \\ \\
+Nu krijgen we het volgende stelsel:
+	$$\begin{bmatrix}\alpha\eta + 1 \end{bmatrix} \begin{bmatrix}\Lambda _0\end{bmatrix} = \begin{bmatrix}\alpha\eta + \eta\end{bmatrix}$$
+In de gegeven tabel zien we dat $\alpha\eta + 1 = \alpha ^8 $ en ook dat $\alpha ^{15} = 1$ dus dan geldt dat:
+		$$\alpha ^8 * \alpha ^7 = \alpha ^{15} = 1$$
+Nu vinden we zo:
+	$$\Lambda_0 = \alpha\eta + \eta * \alpha ^7 = \alpha ^2 * \alpha ^7 = \alpha ^9 $$
+\noindent Dit geeft ons dan weer:
+	$$\Lambda (x) = \Lambda _0 + x =  \alpha ^9 + x.$$
+De nulpunt van deze veelterm is $X_1 = \alpha ^9 = \beta ^3$.\\ \\
+Hiermee kunnen we dan weer het volgende stelsel opstellen:
+		$$\begin{bmatrix}(\alpha^9)^2\end{bmatrix} \begin{bmatrix}Y_1\end{bmatrix} = \begin{bmatrix}\alpha ^8\end{bmatrix} $$
+Als we dit uitwerken vinden we $Y _1 = \alpha ^8 * \alpha ^{12} = \alpha ^5$.\\ \\
+Dit geeft ons dan:
+	$$e(x) = \eta x^3$$
+Uitendelijk bekomen we dan:
+	$$c(x) = v(x) - e(x) = 1 + \eta^2 x + \eta^2 x^2 + \eta^2 x^3 + \eta x^4 - \eta x^3 = 1 + \eta^2 x + \eta^2 x^2 + x^3 + \eta x^4$$
 \end{document}
