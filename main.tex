@@ -1747,7 +1747,71 @@ Nu kunnen we $c(x)$ berekenen:
 	$$ c(x) = v(x) - e(x) =1 + \eta^2 x + \eta^2 x^2 + x^3 + \eta x^4$$
 Het ontvangen informatiewoord $i(x)$ is dan:
 	$$i(x) = c(x)/g(x) = 1 + 0x + \eta x^2 = \begin{bmatrix}1 & 0 & \eta\end{bmatrix} = \begin{bmatrix}10 & 00 & 01\end{bmatrix} $$
-	\item $(n,q,t,l) = (15,4,4,1)$ en $v(x) = x^2 + \eta x^5 + \eta^2 x^{13}$ met $\eta^2 + \eta + 1 = 0$
-	\item $(n,q,t,l) = (15,11,3,2)$ en $v=$ 3 5 4 3 6 9 10 9 8 10 8 4 6 4 7, waarbij $x^2 + x + 7$ als primitieve veelterm over $GF(11)$ gebruikt wordt en enkele syndromen zijn $S_2 = 10$, $S_3 = 3$, $S_4 = 0$, $S_5 = 8$ en $S_6 = 1$.
+	\item We factoriseren eerst $x^{15}-1$ over $GF(4)$.\\ \\
+		\textbf{1)} $4^k \text{ mod } 15 = 1 \Rightarrow k = 2$. \\
+		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(4^2)$ met  $\alpha ^2 = \eta + \eta\alpha$. \\
+		\textbf{3)} $\beta = \alpha$. \\
+				\textbf{4)} We bepalen de nevenklassen module 15 in $GF(4)$: \\
+			$$\begin{tabular}{lllllll}
+$C_0$ & $=$ & \{0\}    & $\quad$ & $C_6$    & $=$ & \{6,9\}  \\
+$C_1$ & $=$ & \{1,4\}  & $\quad$ & $C_7$    & $=$ & \{7,13\} \\
+$C_2$ & $=$ & \{2,8\}  & $\quad$ & $C_{10}$ & $=$ & \{10\}   \\
+$C_3$ & $=$ & \{3,12\} & $\quad$ & $C_{11}$ & $=$ & \{11\}   \\
+$C_5$ & $=$ & \{5\}    & $\quad$ &          &     &         
+\end{tabular}$$
+		\textbf{5)} We bepalen minimaalveeltermen: \\
+			$$\begin{tabular}{lll}
+$m^{(1)}$ & $=$ & $(x-\beta ^1)(x-\beta ^4) = x^2 + \alpha ^5 x + \alpha ^5$     \\
+$m^{(2)}$ & $=$ & $(x-\beta ^2)(x-\beta ^8) = x^2 + \alpha ^{10} x + \alpha ^10$ \\
+$m^{(3)}$ & $=$ & $(x-\beta ^3)(x-\beta ^{12}) = x^2 \alpha ^5 x + 1$            \\
+$m^{(5)}$ & $=$ & $(x-\beta ^5) = x + \alpha ^5$     \\
+$m^{(6)}$  & $=$ & $(x-\beta ^6)(x- \beta ^9) = x^2 + \alpha ^{10} +1$ \\
+$m^{(7)}$  & $=$ & $(x-\beta ^7)(x-\beta ^{13}) = x^2 + x + \alpha ^5$ \\
+$m^{(10)}$ & $=$ & $(x-\beta ^{10}) = x+\alpha  ^{10}$                 \\
+$m^{(11)}$ & $=$ & $(x-\beta ^{11}) = x+\alpha ^{11}$                 
+\end{tabular}$$
+\noindent \\Aangezien $t = 4$ moeten we $4*2 = 8$ opeenvolgende $\beta$'s nemen als nulpunt voor $g(x)$, te beginnen bij $\beta ^l = \beta ^1$, we nemen dus $\beta ^1, \beta ^2, \dots, \beta ^8$. \\ \\
+Nu geldt dat:
+	$$g(x) = m^{(1)}m^{(2)}m^{(3)}m^{(5)}m^{(6)}m^{(7)} = $$
+\noindent \\
+We vullen alle nulpunten van $g(x)$ in in $v(x)$, dit geeft ons:
+$$\begin{tabular}{lllllll}
+$S_1$ & $=$ & $v(\alpha)$    & $=$ & $0$                         & $=$ & $0$            \\
+$S_2$ & $=$ & $v(\alpha ^2)$ & $=$ & $\eta ^2 \alpha + \eta ^2 $ & $=$ & $\alpha ^{7}$  \\
+$S_3$ & $=$ & $v(\alpha ^3)$ & $=$ & $\eta ^2 \alpha$            & $=$ & $\alpha ^{11}$ \\
+$S_4$ & $=$ & $v(\alpha ^4)$ & $=$ & $0$                         & $=$ & $0$            \\
+$S_5$ & $=$ & $v(\alpha ^5)$ & $=$ & $\eta ^2$                   & $=$ & $\alpha ^{10}$ \\
+$S_6$ & $=$ & $v(\alpha ^6)$ & $=$ & $\eta \alpha + 1$           & $=$ & $\alpha ^{8}$  \\
+$S_7$ & $=$ & $v(\alpha ^7)$ & $=$ & $\eta $                     & $=$ & $\alpha ^{5}$  \\
+$S_8$ & $=$ & $v(\alpha ^8)$ & $=$ & $\eta ^2 \alpha + \eta $    & $=$ & $\alpha ^{13}$
+\end{tabular}$$
+De verdere uitwerking, moet nog worden aangevuld.
+	
+	\item We factoriseren eerst $x^{15}-1$ over $GF(11)$.\\ \\
+		\textbf{1)} $11^k \text{ mod } 15 = 1 \Rightarrow k = 2$. \\
+		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(11^2)$ met  $\alpha ^2 = 10\alpha  + 4$. \\
+		\textbf{3)} Gegeven is dat $\beta = \alpha ^8$. \\ \\
+		\textbf{4)} We bepalen de nevenklassen module 5 in $GF(4)$: \\
+			$$\begin{tabular}{lllllll}
+$C_0$ & $=$ & \{0\}    & $\quad$ & $C_5$    & $=$ & \{5,10\} \\
+$C_1$ & $=$ & \{1,11\} & $\quad$ & $C_6$    & $=$ & \{6\}    \\
+$C_2$ & $=$ & \{2,7\}  & $\quad$ & $C_{8}$  & $=$ & \{8,13\} \\
+$C_3$ & $=$ & \{3\}    & $\quad$ & $C_{9}$  & $=$ & \{91\}   \\
+$C_4$ & $=$ & \{4,14\} & $\quad$ & $C_{12}$ & $=$ & \{1\}  
+\end{tabular}$$
+		\textbf{5)} We bepalen minimaalveeltermen: \\
+			$$\begin{tabular}{lll}
+$m^{(2)}$  & $=$ & $x^2 + 9 x + 4$       \\
+$m^{(3)}$  & $=$ & $ x + 6$              \\
+$m^{(4)}$  & $=$ & $x^2 + 4x + 5$        \\
+$m^{(5)}$  & $=$ & $x^2 - \beta ^{14} x$ \\
+$m^{(6)}$  & $=$ & $x+8$                 \\
+$m^{(8)}$  & $=$ & $x^2 + 5x + 3$        \\
+$m^{(9)}$  & $=$ & $x+ 7$                \\
+$m^{(12)}$ & $=$ & $x+2$                
+\end{tabular}$$
+\noindent \\Aangezien $t = 3$ moeten we $3*2 = 6$ opeenvolgende $\beta$'s nemen als nulpunt voor $g(x)$, te beginnen bij $\beta ^l = \beta ^2$, we nemen dus $\beta ^2, \beta ^3, \dots, \beta ^8$. \\ \\
+Nu geldt dat:
+	$$g(x) = m^{(2)}m^{(3)}m^{(4)}m^{(5)}m^{(6)}m^{(8)}$$
 \end{enumerate}
 \end{document}
