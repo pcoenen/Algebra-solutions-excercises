@@ -1645,7 +1645,7 @@ $C_1$ & $=$ & \{1,4\} \\
 $C_2$ & $=$ & \{2,3\}
 \end{tabular}$$
 Als we $\beta ^2$ en $\beta ^3$ als nulpunten van $g(x)$ nemen dan is de graad van $g(x)$ minimaal:
-	$$g(x) =  m^{(2)}$$
+	$$g(x) =  m^{(2)} = x^2 + \alpha ^{10} x + 1$$
 Nu decoderen we het gegeven woord.\\ \\
 Aangezien dat $v =$ 10 11 11 11 01:
 	$$v(x) = 1 + \eta^2 x + \eta^2 x^2 + \eta^2 x^3 + \eta x^4$$
@@ -1673,4 +1673,79 @@ Dit geeft ons dan:
 	$$e(x) = \eta x^3$$
 Uitendelijk bekomen we dan:
 	$$c(x) = v(x) - e(x) = 1 + \eta^2 x + \eta^2 x^2 + \eta^2 x^3 + \eta x^4 - \eta x^3 = 1 + \eta^2 x + \eta^2 x^2 + x^3 + \eta x^4$$
+\newpage
+\section{Oefenzitting 7}
+\subsection{Oefening 1}
+Beschouw een BCH-code van lengte $n$ over $GF(q)$ met ontwerpparamters $t$ en $l$. Decodeer het ontvangen woord $v$ m.b.v. het BMF-algoritme (BMF=Berlekamp-Massey en Forney) voor:
+\begin{enumerate}[label=(\alph*)]
+	\item $(n,q,t,l) = (5,4,1,2)$ en $v=$ 10 11 11 11 01
+	\item $(n,q,t,l) = (15,4,4,1)$ en $v(x) = x^2 + \eta x^5 + \eta^2 x^{13}$ met $\eta^2 + \eta + 1 = 0$
+	\item $(n,q,t,l) = (15,11,3,2)$ en $v=$ 3 5 4 3 6 9 10 9 8 10 8 4 6 4 7, waarbij $x^2 + x + 7$ als primitieve veelterm over $GF(11)$ gebruikt wordt en enkele syndromen zijn $S_2 = 10$, $S_3 = 3$, $S_4 = 0$, $S_5 = 8$ en $S_6 = 1$.
+\end{enumerate}
+\noindent \\ \textbf{Oplossingsmethode} \\ \\
+We factoriseren eerst $x^n - 1$ over $GF(q)$, de stappen die we uitvoeren vind je in oefenzitting 5. \\ \\
+Daarna voeren we het BM-algoritme uit (zie blz. 75). Kijk zeker naar voorbeeld 65 op blz. 75-76.\\ \\
+Tot slot voeren we dan het algoritme van Forney uit, zie voorbeeld 67 blz. 78-79.
+\\ \\ \textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item We factoriseren eerst $x^5-1$ over $GF(4)$.\\ \\
+		\textbf{1)} $4^k \text{ mod } 5 = 1 \Rightarrow k = 2$. \\
+		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(4^2)$ met  $\alpha ^2 = \eta + \eta\alpha$. \\
+		\textbf{3)} $\beta = \alpha ^3$. \\ \\
+			Hiermee berekenen we:
+			$$\begin{tabular}{lllll}
+$\beta ^1$ & $=$ & $\alpha +\eta + 1$&  $=$& $\alpha ^3$    \\
+$\beta ^2$ & $=$ & $\alpha\eta $   & $=$ & $\alpha ^6$      \\
+$\beta ^3$ & $=$ & $\alpha\eta + \eta + 1$& $=$& $\alpha ^9$\\
+$\beta ^4$ & $=$ & $\alpha + 1$  & $=$& $\alpha ^{12}   $       \\
+$\beta ^5$ & $=$ & $1$ &   $=$& $\alpha ^0  $              
+\end{tabular}$$
+		\textbf{4)} We bepalen de nevenklassen module 5 in $GF(4)$: \\
+			$$\begin{tabular}{lll}
+$C_0$ & $=$ & \{0\}   \\
+$C_1$ & $=$ & \{1,4\} \\
+$C_2$ & $=$ & \{2,3\}
+\end{tabular}$$
+\noindent \\Aangezien $t = 1$ moeten we $t*2 = 2$ opeenvolgende $\beta$'s nemen als nulpunt voor $g(x)$, te beginnen bij $\beta ^l = \beta ^2$, we nemen dus $\beta ^2$ en $\beta ^3$. \\ \\
+Nu geldt dat:
+	$$g(x) = m^{(2)} = (x-\beta ^2)(x-\beta ^3) = x^2 + \alpha ^{10} x + 1$$
+Aangezien dat $v =$ 10 11 11 11 01:
+	$$v(x) = 1 + \eta^2 x + \eta^2 x^2 + \eta^2 x^3 + \eta x^4$$
+We vullen alle nulpunten van $g(x)$ in in $v(x)$, dit geeft ons:
+$$\begin{tabular}{lllllll}
+$S_1$ & $=$ & $v(\beta ^2)$ & $=$ & $\alpha\eta + 1$ &$=$ & $\alpha ^8$ \\
+$S_2$ & $=$ & $v(\beta ^3)$ & $=$ & $\alpha\eta + \eta$ & $=$ & $\alpha ^2$ \\
+\end{tabular}$$
+Nu voeren we het BM-algoritme uit, dit geeft ons de volgende resultaten in tabel-vorm:
+	$$\begin{array}{| c | c | c | c | c | c |}
+	\hline
+	s	& \Delta	& n		& d		& \Lambda(x)	& \Lambda^{*}(x) \\
+	\hline
+	0	& /			& 0		& 0		& 1				& 0 \\ \hline
+	1	& \alpha^8	& 0		& 1		& x				& \alpha^7 \\ \hline
+	2	& \alpha^2	& 1		& 1		& x + \alpha^9	& \alpha^7 \\
+	\hline
+\end{array}$$
+We weten dus dat $\Lambda(x) =  x + \alpha^9$.\\ \\
+Het nulpunt van deze veelterm is $X_ 1 = \alpha ^9$. \\ \\
+Nu passen we het algoritme van Forney toe. \\ \\
+We berekenen eerst $S(x)$:
+	$$S(x) = \sum_{k = 0}^1 S_{2-k} x^k = S_2 + S_1 x = \alpha ^2 + \alpha ^8 x$$
+Hiermee berekenen we $\Omega (x)$:
+	$$\Omega(x) = R_{x^2}((\alpha^2 + \alpha^8 x)(x + \alpha^9)) = R_{x^2}(\alpha^{11} + \alpha ^8x^2)$$
+$R_{x^2}(\alpha^{11} + \alpha ^8x^2)$ is gelijk aan de rest wanneer dat $\alpha^{11} + \alpha ^8x^2$ wordt gedeeld door $x^2$:
+	$$\Omega(x) = R_{x^2}(\alpha^{11} + \alpha ^8x^2) = \alpha^{11}$$
+De afgeleide van $\Lambda (x)$:
+	$$\Lambda '(x) = 1$$
+Nu bereken we nog $Y_1$:
+	$$Y_1 = \frac{\alpha ^{11}}{X^4_1 * 1} = \frac{\alpha ^{11}}{\alpha ^6} = \alpha ^5$$
+Hiermee vinden we nu $e(x)$:
+	$$e(x) = Y_1 x^3 = \alpha ^5 x^3 = \eta x^3$$
+Nu kunnen we $c(x)$ berekenen:
+	$$ c(x) = v(x) - e(x) =1 + \eta^2 x + \eta^2 x^2 + x^3 + \eta x^4$$
+Het ontvangen informatiewoord $i(x)$ is dan:
+	$$i(x) = c(x)/g(x) = 1 + 0x + \eta x^2 = \begin{bmatrix}1 & 0 & \eta\end{bmatrix} = \begin{bmatrix}10 & 00 & 01\end{bmatrix} $$
+	\item $(n,q,t,l) = (15,4,4,1)$ en $v(x) = x^2 + \eta x^5 + \eta^2 x^{13}$ met $\eta^2 + \eta + 1 = 0$
+	\item $(n,q,t,l) = (15,11,3,2)$ en $v=$ 3 5 4 3 6 9 10 9 8 10 8 4 6 4 7, waarbij $x^2 + x + 7$ als primitieve veelterm over $GF(11)$ gebruikt wordt en enkele syndromen zijn $S_2 = 10$, $S_3 = 3$, $S_4 = 0$, $S_5 = 8$ en $S_6 = 1$.
+\end{enumerate}
 \end{document}
