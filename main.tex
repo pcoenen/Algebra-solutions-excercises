@@ -1625,7 +1625,7 @@ $\alpha^{14} = 1 + \eta^2 \alpha$
 \end{tabularx}
 \noindent \\ \textbf{Oplossingsmethode} \\ \\
 	Volledig analoog aan de vorige oefening.
-\\ \\ \\ \textbf{Oplossing} \\ \\
+\\ \\ \textbf{Oplossing} \\ \\
 	We factoriseren eerst $x^5-1$ over $GF(4)$.\\ \\
 		\textbf{1)} $4^k \text{ mod } 5 = 1 \Rightarrow k = 2$. \\
 		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(4^2)$ met  $\alpha ^2 = \eta + \eta\alpha$. \\
@@ -1675,6 +1675,45 @@ Uitendelijk bekomen we dan:
 	$$c(x) = v(x) - e(x) = 1 + \eta^2 x + \eta^2 x^2 + \eta^2 x^3 + \eta x^4 - \eta x^3 = 1 + \eta^2 x + \eta^2 x^2 + x^3 + \eta x^4$$
 Het ontvangen informatiewoord $i(x)$ is dan:
 	$$i(x) = c(x)/g(x) = 1 + 0x + \eta x^2 = \begin{bmatrix}1 & 0 & \eta\end{bmatrix} = \begin{bmatrix}10 & 00 & 01\end{bmatrix} $$
+\subsubsection{Oefening 4}
+Beschouw een BCH-code van lengte $n=15$ over $GF(4)$ die $t=4$ fouten kan verbeteren. Neem $l=1$. Decodeer het ontvangen woord $v(x) = x^2 + \eta x^5 + \eta^2 x^{13}$ (met $\eta^2 + \eta + 1 = 0$ (zie hoger)) met het PGZ algoritme.
+\\ \\ \textbf{Oplossingsmethode} \\ \\
+Zelfde methode als voorgaande oefeningen
+\\ \\ \textbf{Oplossing} \\ \\
+We factoriseren eerst $x^5-1$ over $GF(4)$.\\ \\
+		\textbf{1)} $4^k \text{ mod } 15 = 1 \Rightarrow k = 2$. \\
+		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(4^2)$ met  $\alpha ^2 = \eta + \eta\alpha$. \\
+		\textbf{3)} $\beta = \alpha $. \\ \\
+		\textbf{4)} We bepalen de nevenklassen module 15 in $GF(4)$: \\
+			$$\begin{tabular}{lll}
+$C_0$  & $=$ & $\{0\}$     \\
+$C_1$  & $=$ & $\{1,4\}$   \\
+$C_2$  & $=$ & $\{2,8\}$   \\
+$C_3$  & $=$ & $\{3,12\}$  \\
+$C_4$  & $=$ & $\{4,1\}$   \\
+$C_5$  & $=$ & $\{5\}$     \\
+$C_6$  & $=$ & $\{6,9\}$   \\
+$C_7$  & $=$ & $\{7,13\}$  \\
+$C_8$  & $=$ & $\{8,2\}$   \\
+$C_9$  & $=$ & $\{9,6\}$   \\
+$C_{10}$ & $=$ & $\{10\}$    \\
+$C_{11}$ & $=$ & $\{11,14\}$
+\end{tabular}$$
+We krijgen zo de volgende minimale veeltermen:
+	$$\begin{tabular}{lllll}
+$C_0$  & $=$ & $\{0\}$     & $\rightarrow$ & $m^{(0)} = (x - \alpha ^0) = x + 1 $                                 \\
+$C_1$  & $=$ & $\{1,4\}$   & $\rightarrow$ & $m^{(1)} = (x - \alpha ^ 1)(x-\alpha ^4) = x ^2 +\eta x + \eta $       \\
+$C_2$  & $=$ & $\{2,8\}$   & $\rightarrow$ & $m^{(2)} = (x -\alpha ^2)(x- \alpha ^8) = x^2 + (1+\eta) x + \eta + 1$ \\
+$C_3$  & $=$ & $\{3,12\}$  & $\rightarrow$ & $m^{(3)} = (x -\alpha ^3)(x- \alpha ^{12}) = x^2 + \eta x + 1$          \\
+$C_5$  & $=$ & $\{5\}$     & $\rightarrow$ & $m^{(5)} = (x -\alpha ^5) = x + \eta$                                 \\
+$C_6$  & $=$ & $\{6,9\}$   & $\rightarrow$ & $m^{(6)} = (x -\alpha ^6)(x- \alpha ^9) = x^2 + (\eta + 1)x + 1$      \\
+$C_7$  & $=$ & $\{7,13\}$  & $\rightarrow$ & $m^{(7)} = (x -\alpha ^7)(x- \alpha ^{13}) =  x^2 + x + \eta$         \\
+$C_{10}$ & $=$ & $\{10\}$    & $\rightarrow$ & $m^{(10)} = (x - \alpha ^{10}) = x + \eta + 1$                          \\
+$C_{11}$ & $=$ & $\{11,14\}$ & $\rightarrow$ & $m^{(11)} = (x -\alpha ^{11})(x- \alpha ^{14}) = x^2 + x + \eta + 1$     
+\end{tabular}$$
+Als we $\beta ^2$ en $\beta ^3$ als nulpunten van $g(x)$ nemen dan is de graad van $g(x)$ minimaal:
+	$$g(x) =  m^{(2)} = x^2 + \alpha ^{10} x + 1$$
+
 \newpage
 \section{Oefenzitting 7}
 \subsection{Oefening 1}
