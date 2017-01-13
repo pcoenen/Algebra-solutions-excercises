@@ -687,7 +687,7 @@ De verzameling $G$ bevat de elementen $\{1,2,3,4,5,6\}$, waarbij $1$ het neutraa
 	\item De orde van 1 is 1 want $1^1 = 1$
 	\item De orde van 2 is 3 want $2^3 = 1$
 	\item De orde van 3 is 6 want $(3^2)^3= 2^3 = 1$
-	\item De orde van 4 is 1 want $4^3 =  1$
+	\item De orde van 4 is 3 want $4^3 =  1$
 	\item De orde van 5 is 6 want $(5^2)^3 = 4^3 = 1$
 	\item De orde van 6 is 2 want $6^2 = 1$
 \end{enumerate}
@@ -722,18 +722,18 @@ In deel II blz. 6 vind je een voorbeeld dat bijna analoog is aan deze oefening.
 	\item Principaal ideaal deel II blz 4.
 	\item Een ideaal $\mathbb{D}$ in een ring $\mathbb{R}$ is een priemideaal als geldt (zie deel II blz. 6):
 		$$\forall a, b \in R \text{ en } ab \in D: a\in D \text{ of } b\in D.$$
+		Quotiëntring zie blz. 5 deel II en voorbeeld 2 blz. 6.
 	\item Om na te gaan of een we een maximaal ideaal hebben gaan we na of de quotiëntring een veld is (stelling 7 deel II blz 9, def. van een veld zie blz 5). \\
 		Def. van de karakteristiek zie blz. 10 stelling 8. Gebruik stelling 9 blz 10 om de karakteristiek snel te vinden.
 \end{enumerate}
 \textbf{Oplossing}
 \begin{enumerate}[label=(\alph*)]
 	\item We kijken eerst na of $I$ een ring is, het is duidelijk dat aan alle voorwaarden (zie deel I blz. 114) is voldaan om een ring te zijn.\\ \\
-		$I$ bevat alle mogelijke veelvouden van 3 in $\mathbb{Z}_{24}$.\\
-		Het is duidelijk dat het aftrekken van twee veelvouden van 3 terug resulteert in een veelvoud van 3. Aangezien dat $I$ alle mogelijke veelvouden bevat 
-is aan de eerste voorwaarden van een ideaal al voldaan. \\
-		Ook het vermenigvuldigen van een veelvoud van 3 met een getal uit $\mathbb{Z}_{24}$ zal terug resulteren in een veelvoud van 3, ook aan de tweede voorwaarde is dus voldaan.\\
+$I$ bevat alle mogelijke veelvouden van 3 in $\mathbb{Z}_{24}$.\\
+		Het is duidelijk dat het aftrekken van twee veelvouden van 3 terug resulteert in een veelvoud van 3 (mod 24). Aangezien dat $I$ alle mogelijke veelvouden bevat is aan de eerste voorwaarden van een ideaal al voldaan. \\
+		Ook het vermenigvuldigen van een veelvoud van 3 met een getal uit $\mathbb{Z}_{24}$ zal terug resulteren in een veelvoud van 3 (mod 24), ook aan de tweede voorwaarde is dus voldaan.\\
 		$I$ is dus een ideaal.
-	\item $I$ is een principaal ideaal, de generatoren bekomen we door de elementen van $I$ te nemen die geen delers gemeenschappelijk hebben met 24.\\ 		 		De elementen $\{3,9,15,21\}$ zijn dus generatoren.
+	\item $I$ is een principaal ideaal, waarbij de elementen $\{3,9,15,21\}$ de generatoren zijn.
 	\item Zoek dus voor elk element $x$ van I alle mogelijke a's en b's die een element zijn van $\mathbb{Z}_{24}$ zodat $a*b$ gelijk is aan $x$. Controleer vervolgens of a of b een element is van $I$. \\
 		\\Voor bijvoorbeeld $18 \in I$ vinden we 
 			\begin{itemize}
@@ -785,13 +785,13 @@ Om na te gaan of uitbreidingsstructuur een veld is gebruiken we meestal stelling
 		$$(a + b \sqrt[3]{2} + c \sqrt[3]{2}^2)(d + e \sqrt[3]{2} + f \sqrt[3]{2}^2) = 1$$
 	\item $\mathbb{Z}_5[x]$ is de verzameling van veeltermen over $\mathbb{Z}_5$.\\ $\mathbb{Z}_5[x]|_{(x^2+1)}$ is de verzameling van nevenklassen die bij deling door $x^2+1$ dezelfde rest opleveren (zie deel II blz. 15), dit zijn dus alle veeltermen van de vorm $a + bx$ waarbij $a,b \in \mathbb{Z}_5$. \\ \\
 		Gezien dat $a$ en $b$ allebei elementen zijn van $\mathbb{Z}_5$ en $\mathbb{Z}_5$ 5 elementen bevat, is het totaal aantal mogelijkheden dus gelijk aan $5^2 = 25$. De kardinaliteit van de uitbreiding is dus 25.\\ \\
-		$a + bx$ is een veelterm van de tweede graad, de dimensie is dus gelijk aan $2 + 1 = 3$. \\ \\
+		$a + bx$ is een veelterm van de eerste graad, de dimensie is dus gelijk aan $1 + 1 = 2$. \\ \\
 		Nagaan of dit een veld is kunnen we nu eenvoudig met stelling 19 op blz. 15 van deel II.\\ 
 		We moeten dus enkel nagaan of $x^2+1$ irreduceerbaar is over $\mathbb{Z}_5$, met andere woorden moeten we dus nagaan of $x^2+1$ nulpunten heeft in $\mathbb{Z}_5$.\\
 		Dit is het geval, 2 en 3 zijn bijvoorbeeld nulpunten want $2^2 + 1 = 5 \text{ mod } 5 = 0$ en $3^2 + 1 = 10 \text{ mod } 5 = 0$.
 	\item $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ zijn dus alle veeltermen van de vorm $a + bx + cx^2 + dx^3$ waarin dat $a,b,c,d \in \mathbb{Z}_3$. \\ \\
 		$\mathbb{Z}_3$ bevat 3 elementen. Aangezien dat $a,b,c$ en $d$ elementen zijn van $\mathbb{Z}_3$ zijn er in totaal $4^3 = 81$ mogelijkheden. De kardinaliteit van $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ is dus 81. \\ \\
-		 $a + bx + cx^2 + dx^3$ is een veelterm van graad 3, de dimensie is dus $3+1 = 3$.\\ \\
+		 $a + bx + cx^2 + dx^3$ is een veelterm van graad 3, de dimensie is dus $3+1 = 4$.\\ \\
 		Nu kunnen we terug m.b.v. stelling 19 op blz. 15 bepalen of dat $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ een veld is. We moeten dus nagaan of $x^4+x^3+x-1$ nulpunten heeft in $\mathbb{Z}_3$.
 		\begin{align*}
 			x = 0 \quad &\rightarrow \quad 0^4+0^3+0-1 = -1\\
@@ -844,7 +844,7 @@ Algoritme en volledig annaloog voorbeeld te vinden in deel II blz. 19.
 		$w(x) = 1 + x + x^2$ kunnen we dus ontbinden als $w(x) = 1 + x + x^2 = (x- \gamma)(x+ 1 - \gamma) = (x - \gamma)(x - 1 + \gamma)$
 	\item Om stelling 22 blz. 20 te mogen gebruiken moeten we eerst de karakteristiek van $\mathbb{Z}_2$ bepalen (zie blz. 10 deel II).\\
 		Aangezien dat:
-			$$2*0 = 0 \quad \text{ en } \quad 2*1 = 2 = 0$$
+			$$ 2*1 = 2 = 0$$
 		Geldt dat de karakteristiek gelijk is aan 2. Aangezien dat $|\mathbb{Z}_2| = 2^1$ mogen we dus stelling 22 gebruiken. \\ \\
 		Nu mogen we dus zeggen dat:  $$w(x) = (1+x^{16})(1 + x + x^2) = (1+x)^{16}(1 + x + x^2)$$
 		We moeten nu enkel nog $(1 + x + x^2)$ ontbinden. Aangezien we deze veelterm al hebben ontbonden in de vorige oefening gebruiken we dat resultaat hier opnieuw.\\
@@ -858,22 +858,27 @@ $2$ &     & $2$ & $0$ & $0$ & $0$ & $2$ \\ \hline
 \end{tabular}$$
 	We kunnen $w(x)$ dus ontbinden in:
 		$$w(x) = x^5 + x^4 + x + 1 = (x-2)(x^4-1)$$
-	$(x^4-1)$ is irreduceerbaar in $\mathbb{Z}_3$, we nemen nu $\gamma$ als nulpunt van $x^4 + 1$ zodat $\gamma ^4 + 1 = 0$ wat dus gelijk is aan $\gamma^4 = -1$. \\
-	We delen nu $x^4 - 1$ door $x - \gamma$:
-		$$\begin{tabular}{rccccc|l}
-  & $x^4$                 & $0$                   & $0$                   & $0$            & $1$         & $(x-\gamma)$                                 \\ \hline
-  & $x^4$                 & $0$                   &                       &                &             & $x^3 - \gamma x^2 - \gamma ^2 x - \gamma ^3$ \\
-- & $x^4$                 & $\gamma x^3$          &                       &                &             &                                              \\ \cline{2-3}
-  &                       & $-\gamma x^3$         & $0$                   &                &             &                                              \\
-  & \multicolumn{1}{r}{-} & $-\gamma x^3$         & $\gamma ^2 x^2$       &                &             &                                              \\ \cline{3-4}
-  &                       &                       & $-\gamma ^2 x^2$      & $0$            &             &                                              \\
-  &                       & \multicolumn{1}{r}{-} & $-\gamma ^2 x^2$      & $\gamma ^3 x$  &             &                                              \\ \cline{4-5}
-  &                       &                       &                       & $-\gamma ^3 x$ & $1$         &                                              \\
-  &                       &                       & \multicolumn{1}{r}{-} & $-\gamma ^3 x$ & $\gamma ^4$ &                                              \\ \cline{5-6}
-  &                       &                       &                       &                & $0$         &                                             
-\end{tabular}$$
+	
+
+
+Nu moeten we $x^4-1$ verder ontbinden, aangezien dat deze veelterm geen nulpunten heeft in $\mathbb{Z}_3$, moeten we kijken of $x^4-1$ kan ontbonden worden in het product van twee tweedegraads veeltermen. \\ \\
+	In $\mathbb{Z}_3$ zijn er drie irreduceerbare veeltermen van graad 2:
+			$$(x^2 + 1) \quad \quad (x^2+x+2) \quad \quad (x^2+2x+2)$$
+	Zo vinden we dat :
+			$$x^4-1 = (x^2+2x+2) (x^2+x+2)$$
+	Nu ontbinden we de veelterm $x^2+x+2$ verder, deze veelterm heeft geen nulpunten in $\mathbb{Z}_3$, daarom definiëren we $\alpha$ als nulpunt van deze veelterm, zodat:
+		$$\alpha ^2+ \alpha +2 = 0$$
+	Zo vinden we het volgende splitsingsveld:
+		$$\{ [a\alpha +b] ~|~ a, b \in \mathbb{Z}_3 \} = \{ 0, 1, 2, \alpha, \alpha +1 , \alpha +2, 2\alpha, 2\alpha +1 , 2\alpha +2 \}$$
+	We kunnen nu $x^2+x+2$ verder ontbinden over dit veld:
+		$$x^2+x+2 = (x-\alpha)(x + \alpha +1)$$
+	Nu moeten we enkel nog $x^2+2x+2$ ontbinden, we kijken eerst of een element van ons splitsingsveld al een nulpunt is van deze veelterm:
+		$$\alpha^2+2*\alpha+2 = \alpha \neq 0$$
+		$$(\alpha + 1)^2+2*(\alpha + 1)+2 = \alpha = 0$$
+	$\alpha + 1$ is dus een nulpunt voor  $x^2+2x+2$ zo vinden we:
+		$$x^2+2x+2 = (x - \alpha - 1)(x+\alpha) = (x + 2\alpha +2)(x+\alpha)$$
 	De ontbinding van $w(x)$ is dus:
-		$$w(x) = x^5 + x^4 + x + 1 = (x-2)(x-\gamma)(x^3 - \gamma x^2 - \gamma ^2 x - \gamma ^3)$$
+		$$w(x) = x^5 + x^4 + x + 1 = (x+1)(x + 2\alpha +2)(x+\alpha) (x+2\alpha)(x + \alpha +1)$$
 \end{enumerate}
 \newpage
 \section{Oefenzitting 4}
