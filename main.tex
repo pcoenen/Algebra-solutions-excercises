@@ -1098,12 +1098,9 @@ $C_0$  & $=$ & $\{0\}$     \\
 $C_1$  & $=$ & $\{1,4\}$   \\
 $C_2$  & $=$ & $\{2,8\}$   \\
 $C_3$  & $=$ & $\{3,12\}$  \\
-$C_4$  & $=$ & $\{4,1\}$   \\
 $C_5$  & $=$ & $\{5\}$     \\
 $C_6$  & $=$ & $\{6,9\}$   \\
 $C_7$  & $=$ & $\{7,13\}$  \\
-$C_8$  & $=$ & $\{8,2\}$   \\
-$C_9$  & $=$ & $\{9,6\}$   \\
 $C_{10}$ & $=$ & $\{10\}$    \\
 $C_{11}$ & $=$ & $\{11,14\}$
 \end{tabular}$$
@@ -1133,12 +1130,9 @@ $C_0$  & $=$ & $\{0\}$     & $\rightarrow$ & $m^{(0)} = (x - \alpha ^0) = x + 1 
 $C_1$  & $=$ & $\{1,4\}$   & $\rightarrow$ & $m^{(1)} = (x - \alpha ^ 1)(x-\alpha ^4) = x ^2 +\xi x + \xi $       \\
 $C_2$  & $=$ & $\{2,8\}$   & $\rightarrow$ & $m^{(2)} = (x -\alpha ^2)(x- \alpha ^8) = x^2 + (1+\xi) x + \xi + 1$ \\
 $C_3$  & $=$ & $\{3,12\}$  & $\rightarrow$ & $m^{(3)} = (x -\alpha ^3)(x- \alpha ^{12}) = x^2 + \xi x + 1$          \\
-$C_4$  & $=$ & $\{4,1\}$   & $\rightarrow$ & $m^{(4)} = m^{(1)}$         \\
 $C_5$  & $=$ & $\{5\}$     & $\rightarrow$ & $m^{(5)} = (x -\alpha ^5) = x + \xi$                                 \\
 $C_6$  & $=$ & $\{6,9\}$   & $\rightarrow$ & $m^{(6)} = (x -\alpha ^6)(x- \alpha ^9) = x^2 + (\xi + 1)x + 1$      \\
 $C_7$  & $=$ & $\{7,13\}$  & $\rightarrow$ & $m^{(7)} = (x -\alpha ^7)(x- \alpha ^{13}) =  x^2 + x + \xi$         \\
-$C_8$  & $=$ & $\{8,2\}$   &  $\rightarrow$ & $m^{(8)} = m^{(2)}$  \\
-$C_9$  & $=$ & $\{9,6\}$   & $\rightarrow$ & $m^{(9)} = m^{(6)}$       \\
 $C_{10}$ & $=$ & $\{10\}$    & $\rightarrow$ & $m^{(10)} = (x - \alpha ^{10}) = x + \xi + 1$                          \\
 $C_{11}$ & $=$ & $\{11,14\}$ & $\rightarrow$ & $m^{(11)} = (x -\alpha ^{11})(x- \alpha ^{14}) = x^2 + x + \xi + 1$     
 \end{tabular}$$
@@ -1183,6 +1177,38 @@ $m ^{(2)}$  & $=$ & $(x-\beta ^2)(x-\beta ^3)$           &$=$   & $x^2 + (\alpha
 		\textbf{Stap 6} \\ \\
 		We verkijgen nu de volgende ontbonden veelterm:
 		$$x^{5} - 1 = (x+1)(x^2 + (\alpha ^2 + \alpha + 1)x + 1)(x^2 + (\alpha ^2 + \alpha)x + 1)$$
+		Maar we hebben $\alpha$ bekomen door $GF(2)$ uit te breiden naar $GF(16)$, terwijl ons gevraagd was deze veelterm te ontbinden over $GF(4)$, we moeten dus opzoek naar een ismorfisme tussen $GF(4)$ en $GF(16)$. \\ \\
+		We weten dat $GF(2^4)$ bestaat uit:
+			$$GF(16) = GF(2)|_{x^4 + x + 1} = \{a\alpha ^3 + b \alpha ^2 + c\alpha + d~|~a,b,c,d\in GF(2)\}$$
+		$GF(4)$ bekomen we door $GF(2)$ uit te breiden met $\xi$ waarbij $\xi$ het nulpunt is van de veelterm:
+				$x^2+x+1$
+		zodat:
+				$$\xi^2+\xi+1 = 0 \quad \Rightarrow \quad \xi ^2 = \xi + 1$$
+		$GF(4)$ bestaat dus uit:
+				$$GF(4) = \{0, 1, \xi, \xi+1\}$$
+		Het is dus al duidelijk dat $GF(4)$ en $GF(2^4)$ de elementen 0 en 1 gemeenschappelijk hebben, we moeten enkel nog zoeken naar een isomorfisme voor $\xi$ en $\xi + 1$.\\
+		We rekenen daarvoor eerst alle $\xi ^i$ uit:
+			$$\begin{tabular}{lll}
+				$\xi ^1$  & $=$ & $\xi$                          \\
+				$\xi ^2$  & $=$ & $\xi +1$              \\
+				$\xi ^3$  & $=$ & $1$                        
+			\end{tabular}$$
+		We zien dus dat $\xi ^3 = 1$, we zoeken nu een element uit $GF(2^4)$ waarvan de derde macht ook gelijk is aan één.\\ \\
+		Voor de berkeningen voor de $\beta$'s weten we dat $\alpha ^{15} = 1$ dus weten we ook dat $(\alpha ^5)^3 = 1$, we hebben dus een isomorfisme gevonden tussen $\alpha ^5$ en $\xi$. \\ \\
+		We zoeken nog een isomorfisme tussen $\xi ^2 = \xi + 1$ en een element van $GF(2^4)$. \\
+		$$(\xi ^2)^3 = 1$$
+		Dus we zoeken nog een element van $GF(2^4)$ waarvan de derde macht ook gelijk is aan één, zo vinden we:
+			$$(\alpha ^{10})^3 = \alpha ^{30} = \alpha ^{15} * \alpha^{15} = 1$$
+		We hebben dus de volgende isomorfismen gevonden:
+			$$\xi \quad \rightarrow \quad \alpha^5 = \alpha ^2 + 1$$
+		en
+			$$\xi + 1 \quad \rightarrow \quad \alpha^{10} = \alpha ^2 + \alpha + 1$$
+		Je zou deze isomorfismen ook kunnen omdraaien, dus dat $\xi = \alpha ^{10}$ en $\xi + 1 = \alpha ^5$, maar dat maakt niet uit.\\ \\
+		De ontbonden veelterm:
+			$$x^{5} - 1 = (x+1)(x^2 + (\alpha ^2 + \alpha + 1)x + 1)(x^2 + (\alpha ^2 + \alpha)x + 1)$$
+		kunnen we nu omvormen tot:
+			$$x^{5} - 1 = (x+1)(x^2 + (\xi + 1)x + 1)(x^2 + \xi x + 1)$$
+
 		\item \textbf{Stap 1} \\ \\
 		We zoeken eerst een $k$ zodat $3^k \text{ mod } 15 = 1$. Maar aangezien dat 15 een veelvoud is van 3 zullen we geen $k$ vinden die voldoet aan deze voorwaarden. \\ \\
 		Om dit op te lossen passen we stelling 22 op blz. 20 toe, deze stelling mogen we toepassen omdat een Galoisveld voldoet aan de benodigde voorwaarden.\\
