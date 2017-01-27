@@ -790,7 +790,7 @@ Om na te gaan of uitbreidingsstructuur een veld is gebruiken we meestal stelling
 		We moeten dus enkel nagaan of $x^2+1$ irreduceerbaar is over $\mathbb{Z}_5$, met andere woorden moeten we dus nagaan of $x^2+1$ nulpunten heeft in $\mathbb{Z}_5$.\\
 		Dit is het geval, 2 en 3 zijn bijvoorbeeld nulpunten want $2^2 + 1 = 5 \text{ mod } 5 = 0$ en $3^2 + 1 = 10 \text{ mod } 5 = 0$.
 	\item $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ zijn dus alle veeltermen van de vorm $a + bx + cx^2 + dx^3$ waarin dat $a,b,c,d \in \mathbb{Z}_3$. \\ \\
-		$\mathbb{Z}_3$ bevat 3 elementen. Aangezien dat $a,b,c$ en $d$ elementen zijn van $\mathbb{Z}_3$ zijn er in totaal $4^3 = 81$ mogelijkheden. De kardinaliteit van $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ is dus 81. \\ \\
+		$\mathbb{Z}_3$ bevat 3 elementen. Aangezien dat $a,b,c$ en $d$ elementen zijn van $\mathbb{Z}_3$ zijn er in totaal $3^4 = 81$ mogelijkheden. De kardinaliteit van $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ is dus 81. \\ \\
 		 $a + bx + cx^2 + dx^3$ is een veelterm van graad 3, de dimensie is dus $3+1 = 4$.\\ \\
 		Nu kunnen we terug m.b.v. stelling 19 op blz. 15 bepalen of dat $\mathbb{Z}_3[x]|_{(x^4+x^3+x-1)}$ een veld is. We moeten dus nagaan of $x^4+x^3+x-1$ nulpunten heeft in $\mathbb{Z}_3$.
 		\begin{align*}
@@ -857,15 +857,15 @@ $2$ &     & $2$ & $0$ & $0$ & $0$ & $2$ \\ \hline
     & $1$ & $0$ & $0$ & $0$ & $1$ & $0$
 \end{tabular}$$
 	We kunnen $w(x)$ dus ontbinden in:
-		$$w(x) = x^5 + x^4 + x + 1 = (x-2)(x^4-1)$$
+		$$w(x) = x^5 + x^4 + x + 1 = (x-2)(x^4+1)$$
 	
 
 
-Nu moeten we $x^4-1$ verder ontbinden, aangezien dat deze veelterm geen nulpunten heeft in $\mathbb{Z}_3$, moeten we kijken of $x^4-1$ kan ontbonden worden in het product van twee tweedegraads veeltermen. \\ \\
+Nu moeten we $x^4+1$ verder ontbinden, aangezien dat deze veelterm geen nulpunten heeft in $\mathbb{Z}_3$, moeten we kijken of $x^4+1$ kan ontbonden worden in het product van twee tweedegraads veeltermen. \\ \\
 	In $\mathbb{Z}_3$ zijn er drie irreduceerbare veeltermen van graad 2:
 			$$(x^2 + 1) \quad \quad (x^2+x+2) \quad \quad (x^2+2x+2)$$
 	Zo vinden we dat :
-			$$x^4-1 = (x^2+2x+2) (x^2+x+2)$$
+			$$x^4+1 = (x^2+2x+2) (x^2+x+2)$$
 	Nu ontbinden we de veelterm $x^2+x+2$ verder, deze veelterm heeft geen nulpunten in $\mathbb{Z}_3$, daarom definiëren we $\alpha$ als nulpunt van deze veelterm, zodat:
 		$$\alpha ^2+ \alpha +2 = 0$$
 	Zo vinden we het volgende splitsingsveld:
