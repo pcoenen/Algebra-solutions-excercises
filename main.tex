@@ -1842,27 +1842,42 @@ De verdere uitwerking, moet nog worden aangevuld.
 		\textbf{1)} $11^k \text{ mod } 15 = 1 \Rightarrow k = 2$. \\
 		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(11^2)$ met  $\alpha ^2 = 10\alpha  + 4$. \\
 		\textbf{3)} Gegeven is dat $\beta = \alpha ^8$. \\ \\
-		\textbf{4)} We bepalen de nevenklassen module 5 in $GF(4)$: \\
+		\textbf{4)} We bepalen de nevenklassen module 15 in $GF(11)$: \\
 			$$\begin{tabular}{lllllll}
 $C_0$ & $=$ & \{0\}    & $\quad$ & $C_5$    & $=$ & \{5,10\} \\
 $C_1$ & $=$ & \{1,11\} & $\quad$ & $C_6$    & $=$ & \{6\}    \\
 $C_2$ & $=$ & \{2,7\}  & $\quad$ & $C_{8}$  & $=$ & \{8,13\} \\
-$C_3$ & $=$ & \{3\}    & $\quad$ & $C_{9}$  & $=$ & \{91\}   \\
-$C_4$ & $=$ & \{4,14\} & $\quad$ & $C_{12}$ & $=$ & \{1\}  
+$C_3$ & $=$ & \{3\}    & $\quad$ & $C_{9}$  & $=$ & \{9\}   \\
+$C_4$ & $=$ & \{4,14\} & $\quad$ & $C_{12}$ & $=$ & \{12\}  
 \end{tabular}$$
-		\textbf{5)} We bepalen minimaalveeltermen: \\
+		\textbf{5)} We bepalen de benodigde minimaalveeltermen: \\
 			$$\begin{tabular}{lll}
-$m^{(2)}$  & $=$ & $x^2 + 9 x + 4$       \\
+$m^{(2)}$  & $=$ & $x^2 +9 x + 4$       \\
 $m^{(3)}$  & $=$ & $ x + 6$              \\
 $m^{(4)}$  & $=$ & $x^2 + 4x + 5$        \\
-$m^{(5)}$  & $=$ & $x^2 - \beta ^{14} x$ \\
-$m^{(6)}$  & $=$ & $x+8$                 \\
-$m^{(8)}$  & $=$ & $x^2 + 5x + 3$        \\
-$m^{(9)}$  & $=$ & $x+ 7$                \\
-$m^{(12)}$ & $=$ & $x+2$                
+$m^{(5)}$  & $=$ & $x^2 +x + 1$ \\
+$m^{(6)}$  & $=$ & $x+8$             
 \end{tabular}$$
-\noindent \\Aangezien $t = 3$ moeten we $3*2 = 6$ opeenvolgende $\beta$'s nemen als nulpunt voor $g(x)$, te beginnen bij $\beta ^l = \beta ^2$, we nemen dus $\beta ^2, \beta ^3, \dots, \beta ^8$. \\ \\
+\noindent \\Aangezien $t = 3$ moeten we $3*2 = 6$ opeenvolgende $\beta$'s nemen als nulpunt voor $g(x)$, te beginnen bij $\beta ^l = \beta ^2$, we nemen dus $\beta ^2, \beta ^3, \dots, \beta ^7$. \\ \\
 Nu geldt dat:
-	$$g(x) = m^{(2)}m^{(3)}m^{(4)}m^{(5)}m^{(6)}m^{(8)}$$
+	$$g(x) = m^{(2)}m^{(3)}m^{(4)}m^{(5)}m^{(6)}$$
+Wat gelijk is aan:
+	$$g(x) = (x^2 +9 x + 4)(x + 6)(x^2 + 4x + 5)(x^2 +x + 1)(x+8)$$
+We moeten enkel nog $S_1$ berekenen de andere $S_i$'s zijn al gegeven:
+	$$S_1 = v(\beta ^2) = 1$$
+Nu voeren we het BM-algoritme uit, dit geeft ons de volgende resultaten in tabel-vorm:
+	$$\begin{array}{| c | c | c | c | c | c |}
+	\hline
+	s	& \Delta	& n		& d		& \Lambda(x)	& \Lambda^{*}(x) \\
+	\hline
+	0	& /			& 0		& 0		& 1				& 0 \\ \hline
+	1	& 1			& 0		& 1		& x	+10			& 1 \\ \hline
+	2	& 10			& 1		& 1		& x				& 1 \\ \hline
+	3	& 3			& 1		& 2		& x^2 + 8			& 4x \\ \hline
+	4	& 3			& 2		& 2		&  x^2 + 10 x + 8	& 4x \\ \hline
+	5	& 10			& 2		& 3		&  x^3 + 10 x^2 + x	& 10x^3 + x^2+10x \\ \hline
+	6	& 4			& 3		& 3		& 5x^3 + 6x +5x	& 10x^3 + x^2+10x \\
+	\hline
+\end{array}$$
 \end{enumerate}
 \end{document}
