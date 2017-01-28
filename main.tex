@@ -1880,4 +1880,26 @@ Nu voeren we het BM-algoritme uit, dit geeft ons de volgende resultaten in tabel
 	\hline
 \end{array}$$
 \end{enumerate}
+\subsection{Oefening 2}
+De opeenvolgende waarden $d$ (de graad van $\Lambda(x)$) bij het bepalen van de foutlocatorveelterm met het BM-algoritme zoals beschreven op pag. 75 van de nota's zijn: 0 0 2 2 2 3 3 3 3 6 6 6 6
+\begin{enumerate}[label=(\alph*)]
+	\item Wat zijn de opeenvolgende waarden van $n$?
+	\item Welke van de matrices $H^{(k)}$, $k=1,2,\ldots,6$ (def. 33, p.62) zijn regulier en welke zijn singulier?
+\end{enumerate}
+\noindent \\ \textbf{Oplossingsmethode}
+\begin{enumerate}[label=(\alph*)]
+	\item We voeren het algoritme op blz. 69 uit en kijken welke waardes n kan aannemen voor deze waardes van d.
+	\item Op blz. 73 staat: ''Als gevolg van deze wijziging, neemt d in het algoritme enkel waarden aan waarvoor
+$H^{(d)}$ regulier is''. \\ Hieruit weten we direct voor welke waardes van d $H^{(d)}$ regulier is.
+\end{enumerate}
+\noindent \\ \textbf{Oplossing}
+\begin{enumerate}[label=(\alph*)]
+	\item We verkijgen de volgende waardes voor $n$:
+			$$\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{d} & 0 & 0 & 2 & 2 & 2 & 3 & 3 & 3 & 3 & 6 & 6 & 6 & 6 \\ \hline
+\textbf{n} & 0 & 1 & 0 & 1 & 2 & 2 & 3 & 4 & 5 & 3 & 4 & 5 & 6 \\ \hline
+\end{tabular}$$
+	\item $H^{(d)}$ is dus regulier voor $d = 0,2,3,6$ en singulier voor $d = 1,4,5$.
+\end{enumerate}
 \end{document}
