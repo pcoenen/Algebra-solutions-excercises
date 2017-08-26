@@ -832,15 +832,17 @@ Algoritme en volledig annaloog voorbeeld te vinden in deel II blz. 19.
 	\item We kijken eerst na of we geen nulpunten in $\mathbb{Z}_2$ vinden voor $1 + x + x^2$. Dit is niet het geval, aangezien dat het om een tweedegraadsveelterm gaat kunnen we dus besluiten dat  $1 + x + x^2$ irreduceerbaar is  in $\mathbb{Z}_2$. \\ \\
 		We nemen nu $\gamma$ als nulpunt voor  $1 + x + x^2$, er geldt dus dat $1 + \gamma + \gamma ^2 = 0$.\\
 		Nu breiden we $\mathbb{Z}_2$ uit met $\gamma$, dit geeft onz $\mathbb{Z}_2(\gamma) = \{0,1,\gamma, 1 + \gamma\}$.\\
-		Nu moeten we $w(x)$ nog ontbinden in factoren over $\mathbb{Z}_2(\gamma)$, aangezien dat $(x-\gamma)$ een nultpunt is van $w(x)$ is de levert de deling van $w(x)$ door $(x-\gamma)$ geen rest op. \\ Dit geeft ons de volgende staartdeling:  \\ \\
+		Nu moeten we $w(x)$ nog ontbinden in factoren over $\mathbb{Z}_2(\gamma)$. \\ 
+		Dit geeft ons de volgende staartdeling:  \\ \\
 		$$\begin{tabular}{lccc|l}
   & $x^2$ & $x$           & $1$                   & $(x-\gamma)$     \\ \cline{2-5} 
-  & $x^2$ & $x$           &                       & $x + (1-\gamma)$ \\
+  & $x^2$ & $x$           &                       & $x + (1+\gamma)$ \\
 - & $x^2$ & $-\gamma x$   &                       &                  \\ \cline{1-3}
-  &       & $(1-\gamma)x$ & $1$                   &                  \\
-  & -     & $(1-\gamma)x$ & $(\gamma - \gamma^2)$ &                  \\ \cline{2-4}
+  &       & $(1+\gamma)x$ & $1$                   &                  \\
+  & -     & $(1+\gamma)x$ & $-(\gamma + \gamma^2)$ &                  \\ \cline{2-4}
   &       &               & $0$                   &                 
 \end{tabular}$$
+		Aangezien $(x-\gamma)$ een nulpunt is van $w(x)$, levert de deling van $w(x)$ door $(x-\gamma)$ geen rest op. Dit zien we ook aan de laatste restwaarde: $1 + \gamma + \gamma^2$, wat gelijk is aan 0 aangezien $\gamma$ een nulpunt is.\\
 		$w(x) = 1 + x + x^2$ kunnen we dus ontbinden als $w(x) = 1 + x + x^2 = (x- \gamma)(x+ 1 - \gamma) = (x - \gamma)(x - 1 + \gamma)$
 	\item Om stelling 22 blz. 20 te mogen gebruiken moeten we eerst de karakteristiek van $\mathbb{Z}_2$ bepalen (zie blz. 10 deel II).\\
 		Aangezien dat:
