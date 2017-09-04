@@ -1594,7 +1594,7 @@ Als we dit oplossen vinden we dat $Y _1 = 1$ en $Y _2 = 5$.\\ \\
 Dit geeft ons dan:
 	$$e(x) = 100000500000$$
 Uitendelijk bekomen we dan:
-	$$c(x) = v(x) - e(x) = 025614000000-100005000000 = 625614200000$$
+	$$c(x) = v(x) - e(x) = 025614000000-100000500000 = 625614200000$$
 \end{enumerate}
 \subsection{Oefening 3}
 Beschouw een BCH-code van lengte $n=5$ over $GF(4)$ die $t=1$ fouten kan verbeteren. Kies hierbij $l$ de kleinste waarde in $\mathbb{N}_0$ die e dimensie van de code maximaal maakt. Decodeer het ontvangen woord $v =$ 10 11 11 11 01 met het PGZ algoritme.
@@ -1681,7 +1681,7 @@ Nu krijgen we het volgende stelsel:
 In de gegeven tabel zien we dat $\alpha\eta + 1 = \alpha ^8 $ en ook dat $\alpha ^{15} = 1$ dus dan geldt dat:
 		$$\alpha ^8 * \alpha ^7 = \alpha ^{15} = 1$$
 Nu vinden we zo:
-	$$\Lambda_0 = \alpha\eta + \eta * \alpha ^7 = \alpha ^2 * \alpha ^7 = \alpha ^9 $$
+	$$\Lambda_0 = (\alpha\eta + \eta) * \alpha ^7 = \alpha ^2 * \alpha ^7 = \alpha ^9 $$
 \noindent Dit geeft ons dan weer:
 	$$\Lambda (x) = \Lambda _0 + x =  \alpha ^9 + x.$$
 De nulpunt van deze veelterm is $X_1 = \alpha ^9 = \beta ^3$.\\ \\
@@ -1699,7 +1699,7 @@ Beschouw een BCH-code van lengte $n=15$ over $GF(4)$ die $t=4$ fouten kan verbet
 \\ \\ \textbf{Oplossingsmethode} \\ \\
 Zelfde methode als voorgaande oefeningen
 \\ \\ \textbf{Oplossing} \\ \\
-We factoriseren eerst $x^5-1$ over $GF(4)$.\\ \\
+We factoriseren eerst $x^{15}-1$ over $GF(4)$.\\ \\
 		\textbf{1)} $4^k \text{ mod } 15 = 1 \Rightarrow k = 2$. \\
 		\textbf{2)} Gegeven is dat $\alpha$ het primitief element is van $GF(4^2)$ met  $\alpha ^2 = \eta + \eta\alpha$. \\
 		\textbf{3)} $\beta = \alpha $. \\ \\
